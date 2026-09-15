@@ -4,48 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>S333XGOD</title>
-<meta name="description" content="S333XGOD — official site. Stream the HIGHS &amp; LOWS EP and every release on Spotify, Apple Music and SoundCloud.">
-<link rel="icon" type="image/png" href="emblem.png">
+<meta name="description" content="S333XGOD × Mazze — official site. Stream every release on Spotify, Apple Music, SoundCloud and YouTube.">
+<link rel="icon" type="image/png" href="emblem-s333xgod.png">
 <link rel="canonical" href="https://ronsollc.com/s333xgod-music/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="S333XGOD">
-<meta property="og:description" content="S333XGOD — official site. Stream the HIGHS &amp; LOWS EP and every release on Spotify, Apple Music and SoundCloud.">
+<meta property="og:description" content="S333XGOD × Mazze — official site. Stream every release on Spotify, Apple Music, SoundCloud and YouTube.">
 <meta property="og:url" content="https://ronsollc.com/s333xgod-music/">
 <meta property="og:image" content="https://ronsollc.com/s333xgod-music/art/highs-lows.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#060708">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap">
 <style>
-  :root{
-    --bg:#060708;
-    --panel:#10141a;
-    --ink:#e9edf1;
-    --silver:#c3cdd6;
-    --muted:#8a919b;
-    --accent:#3fd8ea;
-    --accent-soft:rgba(63,216,234,.14);
-    --hairline:rgba(195,205,214,.16);
-    --anton:'Anton',Impact,'Arial Narrow',sans-serif;
-  }
+  body[data-artist="s333xgod"]{--bg:#060708;--panel:#10141a;--muted:#8a919b;--accent:#3fd8ea;--glow:rgba(63,216,234,.3);--hairline:rgba(195,205,214,.16)}
+  body[data-artist="mazze"]{--bg:#070806;--panel:#111410;--muted:#8b9287;--accent:#79e14a;--glow:rgba(121,225,74,.28);--hairline:rgba(198,206,195,.16)}
+  :root{--ink:#e9edf1;--silver:#c3cdd6;--anton:'Anton',Impact,'Arial Narrow',sans-serif}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .4s}
   a{color:inherit;text-decoration:none}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
   img{max-width:100%;display:block}
   .wrap{max-width:1060px;margin:0 auto;padding-inline:22px}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+  .world{animation:worldin .4s ease}
+  @keyframes worldin{from{opacity:0}to{opacity:1}}
 
-  /* ---------- nav ---------- */
-  .nav{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;
-    padding:14px 22px;background:color-mix(in srgb,var(--bg) 72%,transparent);
+  /* ---------- nav + artist switch ---------- */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 18px;background:color-mix(in srgb,var(--bg) 72%,transparent);
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hairline)}
-  .nav .mark{font-family:var(--anton);font-size:19px;letter-spacing:.06em;color:var(--ink)}
-  .nav .links{display:flex;gap:26px;align-items:center}
-  .nav .links a{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-  .nav .links a:hover{color:var(--ink)}
-  .nav .links a.pill{border:1px solid var(--hairline);border-radius:999px;padding:8px 18px;color:var(--ink)}
-  .nav .links a.pill:hover{border-color:var(--accent);color:var(--accent)}
+  .switch{display:flex;border:1px solid var(--hairline);border-radius:999px;padding:4px;gap:4px;background:rgba(0,0,0,.3)}
+  .sw{font-family:var(--anton);font-weight:400;font-size:14px;letter-spacing:.08em;
+    background:none;border:0;color:var(--muted);border-radius:999px;padding:8px 16px;cursor:pointer;transition:color .2s,background .2s}
+  .sw[aria-selected="true"]{background:#fff;color:#0a0a0c}
+  .sw:not([aria-selected="true"]):hover{color:var(--ink)}
+  .nav .pill{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+    border:1px solid var(--hairline);border-radius:999px;padding:8px 16px;transition:border-color .2s,color .2s;white-space:nowrap}
+  .nav .pill:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:430px){.sw{padding:8px 11px;font-size:12.5px}.nav .pill{padding:8px 12px;letter-spacing:.12em}}
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:92svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -59,11 +57,10 @@
     linear-gradient(180deg, color-mix(in srgb,var(--bg) 55%,transparent) 0%, transparent 22%, transparent 62%, var(--bg) 98%)}
   .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
     padding:120px 22px 90px;width:100%}
-  .hero-inner img.emblem{width:130px;max-width:44vw;filter:drop-shadow(0 10px 44px rgba(63,216,234,.3))}
+  .hero-inner img.emblem{max-width:44vw;height:auto;filter:drop-shadow(0 10px 44px var(--glow))}
   h1{font-family:var(--anton);font-weight:400;margin:0;color:#fff;
     font-size:clamp(64px,16vw,190px);line-height:1.02;letter-spacing:.02em;text-wrap:balance;
     text-shadow:0 4px 60px rgba(0,0,0,.55)}
-  .hero-sub{max-width:36em;margin:0;color:var(--silver);text-shadow:0 2px 18px rgba(0,0,0,.7)}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px}
   .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 28px;
     font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:transform .15s,border-color .2s,color .2s,background .2s}
@@ -96,10 +93,9 @@
   .sec-head h2{font-family:var(--anton);font-weight:400;font-size:clamp(30px,5vw,44px);letter-spacing:.03em;margin:0;color:var(--ink)}
   .sec-head .eyebrow{white-space:nowrap}
 
-  /* latest release */
   .latest{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:52px;align-items:center}
   .latest-art{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--hairline);
-    box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 90px rgba(63,216,234,.3)}
+    box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 90px var(--glow)}
   .latest-info{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
   .latest-info .meta{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .latest-info .meta b{color:var(--accent);font-weight:700}
@@ -107,7 +103,6 @@
   .latest-info .everywhere{color:var(--silver);font-size:18px;margin:0}
   @media(max-width:840px){.latest{grid-template-columns:1fr;gap:34px}.latest-art{max-width:min(420px,100%)}}
 
-  /* stream grid */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:30px 26px}
   .card{display:flex;flex-direction:column;gap:12px;min-width:0}
   .card-art{overflow:hidden;border:1px solid var(--hairline);transition:border-color .25s}
@@ -120,37 +115,35 @@
   .card-year{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
   @media(max-width:560px){.grid{grid-template-columns:repeat(2,1fr);gap:22px 16px}.card-name{font-size:13.5px}}
 
-  /* appears-on strip */
   .strip{display:grid;grid-auto-flow:column;grid-auto-columns:172px;gap:18px;overflow-x:auto;padding-bottom:14px;
     scrollbar-width:thin;scrollbar-color:var(--muted) transparent}
   .strip .card-name{font-size:13.5px}
 
-  /* platform links table */
   .plinks{border-top:1px solid var(--hairline)}
   .plink{display:flex;align-items:center;gap:20px;padding-block:22px;border-bottom:1px solid var(--hairline)}
   .plink .ico{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
   .plink .ico svg{width:18px;height:18px}
-  .plink .pname{font-family:var(--anton);font-weight:400;font-size:clamp(22px,4vw,32px);letter-spacing:.03em;transition:color .2s}
+  .plink .pname{font-family:var(--anton);font-weight:400;font-size:clamp(20px,4vw,32px);letter-spacing:.03em;transition:color .2s;min-width:0;overflow-wrap:anywhere}
   .plink .ptype{margin-left:auto;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
   .plink:hover .pname{color:var(--accent)}
 
-  
+  .quote{margin:0;padding-left:24px;border-left:2px solid var(--accent);color:var(--silver);font-size:20px;line-height:1.7;max-width:34em}
+  .quote footer{padding-top:10px;font-size:12px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase}
 
-  /* footer */
   .site-foot{border-top:1px solid var(--hairline);padding-block:54px 64px;text-align:center;color:var(--muted);font-size:13px}
   .site-foot img{width:54px;margin:0 auto 16px;opacity:.85}
 
-  /* floating out-now card */
   .outnow{position:fixed;right:20px;bottom:20px;z-index:39;display:flex;align-items:center;gap:14px;
     background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(12px);
     border:1px solid var(--hairline);border-radius:14px;padding:10px 40px 10px 10px;
     box-shadow:0 16px 44px rgba(0,0,0,.55);max-width:290px}
+  .outnow.dismissed{display:none}
   .outnow img{width:56px;height:56px;object-fit:cover}
   .outnow .on-eyebrow{font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
   .outnow .on-title{font-weight:700;font-size:14px;line-height:1.3}
   .outnow .on-listen{font-size:12px;color:var(--muted)}
   .outnow:hover .on-listen{color:var(--accent)}
-  .outnow .on-x{position:absolute;top:6px;right:8px;background:none;border:0;color:var(--muted);font-size:15px;cursor:pointer;padding:4px;line-height:1}
+  .outnow .on-x{position:absolute;top:6px;right:8px;background:none;border:0;color:var(--muted);font-size:15px;cursor:pointer;padding:4px;line-height:1;z-index:1}
   .outnow .on-x:hover{color:var(--ink)}
   @media(max-width:720px){.outnow{display:none}}
 
@@ -161,16 +154,17 @@
 </style>
 
 <nav class="nav">
-  <a class="mark" href="#top">S333XGOD</a>
-  <div class="links">
-    <a href="#music">Music</a>
-    <a href="#links" class="pill">Listen</a>
+  <div class="switch" role="tablist" aria-label="Choose artist">
+    <button class="sw" role="tab" data-artist="s333xgod" aria-selected="false">S333XGOD</button>
+    <button class="sw" role="tab" data-artist="mazze" aria-selected="false">MAZZE</button>
   </div>
+  <a class="pill" id="listen-link" href="#links-s333xgod">Listen</a>
 </nav>
 
-<div class="rail" aria-label="Streaming platforms">
+<div class="world" data-artist="s333xgod">
+<div class="rail" aria-label="S333XGOD streaming platforms">
     <a class="rail-btn rail-spotify" href="https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl" target="_blank" rel="noopener" aria-label="S333XGOD on Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></a>
-    <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/s333xgod/1694914218" target="_blank" rel="noopener" aria-label="S333XGOD on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075 .972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
+    <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/s333xgod/1694914218" target="_blank" rel="noopener" aria-label="S333XGOD on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
     <a class="rail-btn rail-soundcloud" href="https://soundcloud.com/s333xgod" target="_blank" rel="noopener" aria-label="S333XGOD on SoundCloud"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c.014.06.045.098.09.098.057 0 .091-.037.105-.098l.194-1.308-.194-1.332c-.014-.057-.05-.094-.09-.094m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.104.119.104.061 0 .105-.045.121-.104l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.077.075.138.149.138.075 0 .135-.061.15-.15l.24-2.532-.24-2.623c0-.075-.06-.135-.135-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c0 .09.075.157.159.157.074 0 .148-.068.148-.158l.227-2.563-.227-2.444.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957.187 2.563c0 .09.08.164.18.164.094 0 .174-.09.18-.18l.209-2.563-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914c-.105 0-.195.09-.203.194l-.18 4.872.165 2.548c0 .12.09.209.195.209.104 0 .194-.089.21-.209l.193-2.548-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275.165 2.52c.014.119.104.225.225.225.119 0 .225-.105.225-.225l.195-2.52-.196-5.275c0-.12-.105-.225-.225-.225m1.245.045c0-.135-.105-.24-.24-.24-.119 0-.24.105-.24.24l-.149 5.441.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503-.164-5.456-.016.015zm.749-.134c-.135 0-.255.119-.255.254l-.15 5.322.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474-.165-5.307c0-.148-.115-.253-.25-.253m1.005.166c-.164 0-.284.135-.284.285l-.103 5.143.135 2.474c0 .149.119.277.284.277.149 0 .271-.128.284-.284l.121-2.443-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.104 6.048.115 2.449v.008c.008.06.03.135.074.18.06.075.15.12.24.12.074 0 .149-.03.195-.09.06-.052.09-.127.09-.21l.015-.24.117-2.203-.135-6.086c0-.104-.061-.193-.135-.239l.007-.053zm1.006-.547c-.045-.045-.09-.061-.15-.061-.074 0-.149.016-.209.061-.075.061-.119.15-.119.24v.029l-.137 6.609.076 1.215.061 1.185c0 .164.148.314.328.314.181 0 .33-.15.33-.329l.15-2.414-.15-6.637c0-.12-.074-.221-.165-.277l-.015.065zm8.934 3.777c-.405 0-.795.086-1.139.232-.24-2.654-2.46-4.736-5.188-4.736-.659 0-1.305.135-1.889.359-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/></svg></a>
     <a class="rail-btn rail-youtube" href="https://www.youtube.com/channel/UCTZlvjEmjxjprBtlcSNA5uw" target="_blank" rel="noopener" aria-label="S333XGOD on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
     <a class="rail-btn rail-instagram" href="https://www.instagram.com/s333xgod" target="_blank" rel="noopener" aria-label="S333XGOD on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
@@ -178,7 +172,7 @@
     <a class="rail-btn rail-genius" href="https://genius.com/artists/S333xgod" target="_blank" rel="noopener" aria-label="S333XGOD on Genius"><span style="font-family:Arial,Helvetica,sans-serif;font-weight:900;font-size:19px;line-height:1" aria-hidden="true">G</span></a>
 </div>
 
-<header class="hero" id="top">
+<header class="hero">
   <div class="hero-collage" aria-hidden="true">
     <img src="art/highs-lows.jpg" alt="">
     <img src="art/p-nk.jpg" alt="">
@@ -186,28 +180,28 @@
     <img src="art/inertia-brazzers.jpg" alt="">
     <img src="art/white-autumn.jpg" alt="">
     <img src="art/miss-your-touch.jpg" alt="">
-    <img src="art/flashbacks.jpg" alt="">
-    <img src="art/space.jpg" alt="">
-    <img src="art/the-rush.jpg" alt="">
-    <img src="art/moonlight.jpg" alt="">
-    <img src="art/dark-triad.jpg" alt="">
-    <img src="art/heroine.jpg" alt="">
-    <img src="art/highs-lows.jpg" alt="">
-    <img src="art/p-nk.jpg" alt="">
-    <img src="art/bloodlust.jpg" alt="">
-    <img src="art/inertia-brazzers.jpg" alt="">
-    <img src="art/white-autumn.jpg" alt="">
-    <img src="art/miss-your-touch.jpg" alt="">
-    <img src="art/flashbacks.jpg" alt="">
-    <img src="art/space.jpg" alt="">
-    <img src="art/the-rush.jpg" alt="">
-    <img src="art/moonlight.jpg" alt="">
-    <img src="art/dark-triad.jpg" alt="">
-    <img src="art/heroine.jpg" alt="">
+    <img src="art/flashbacks.jpg" alt="" loading="lazy">
+    <img src="art/space.jpg" alt="" loading="lazy">
+    <img src="art/the-rush.jpg" alt="" loading="lazy">
+    <img src="art/moonlight.jpg" alt="" loading="lazy">
+    <img src="art/dark-triad.jpg" alt="" loading="lazy">
+    <img src="art/heroine.jpg" alt="" loading="lazy">
+    <img src="art/highs-lows.jpg" alt="" loading="lazy">
+    <img src="art/p-nk.jpg" alt="" loading="lazy">
+    <img src="art/bloodlust.jpg" alt="" loading="lazy">
+    <img src="art/inertia-brazzers.jpg" alt="" loading="lazy">
+    <img src="art/white-autumn.jpg" alt="" loading="lazy">
+    <img src="art/miss-your-touch.jpg" alt="" loading="lazy">
+    <img src="art/flashbacks.jpg" alt="" loading="lazy">
+    <img src="art/space.jpg" alt="" loading="lazy">
+    <img src="art/the-rush.jpg" alt="" loading="lazy">
+    <img src="art/moonlight.jpg" alt="" loading="lazy">
+    <img src="art/dark-triad.jpg" alt="" loading="lazy">
+    <img src="art/heroine.jpg" alt="" loading="lazy">
   </div>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="emblem" src="emblem.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="130">
+    <img class="emblem" src="emblem-s333xgod.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="120" loading="lazy">
     <h1>S333XGOD</h1>
     <p class="hero-out">HIGHS &amp; LOWS &mdash; out now</p>
     <div class="cta-row">
@@ -217,9 +211,9 @@
   </div>
 </header>
 
-<section id="latest" style="padding-top:70px">
+<section style="padding-top:70px">
   <div class="wrap latest">
-    <img class="latest-art" src="art/highs-lows.jpg" alt="HIGHS &amp; LOWS cover art" width="600" height="600">
+    <img class="latest-art" src="art/highs-lows.jpg" alt="HIGHS &amp; LOWS cover art" width="600" height="600" loading="lazy">
     <div class="latest-info">
       <p class="eyebrow">Latest release</p>
       <h2 class="latest-title">HIGHS &amp; LOWS</h2>
@@ -227,13 +221,13 @@
       <p class="everywhere">Out now, everywhere.</p>
       <div class="cta-row" style="justify-content:flex-start">
         <a class="btn btn-solid" href="https://open.spotify.com/album/35phdmUKBinvz3N2VM6pNi" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Spotify</a>
-        <a class="btn btn-ghost" style="border-color:var(--hairline);background:none" href="https://music.apple.com/us/album/highs-lows-ep/6800418853" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
+        <a class="btn btn-ghost" style="background:none" href="https://music.apple.com/us/album/highs-lows-ep/6800418853" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="music" style="padding-top:0">
+<section class="tracks" style="padding-top:0" id="music-s333xgod">
   <div class="wrap">
     <div class="sec-head"><h2>Stream now</h2><span class="eyebrow">15 releases</span></div>
     <div class="grid">
@@ -301,7 +295,7 @@
   </div>
 </section>
 
-<section id="links" style="padding-top:0">
+<section style="padding-top:0" id="links-s333xgod">
   <div class="wrap">
     <div class="sec-head"><h2>S333XGOD everywhere</h2></div>
     <div class="plinks">
@@ -316,7 +310,7 @@
         <span class="ptype">playlist &#8599;&#xFE0E;</span>
       </a>
       <a class="plink" href="https://music.apple.com/us/artist/s333xgod/1694914218" target="_blank" rel="noopener">
-        <span class="ico rail-apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075 .972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></span>
+        <span class="ico rail-apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></span>
         <span class="pname">Apple Music</span>
         <span class="ptype">artist &#8599;&#xFE0E;</span>
       </a>
@@ -350,27 +344,311 @@
 </section>
 
 <footer class="site-foot">
-  <img src="emblem.png" alt="">
+  <img src="emblem-s333xgod.png" alt="" loading="lazy">
   <div>&copy; 2026 S333XGOD. All rights reserved.</div>
 </footer>
 
-<div class="outnow" id="outnow" hidden>
-  <img src="art/highs-lows.jpg" alt="">
+<div class="outnow">
+  <img src="art/highs-lows.jpg" alt="" loading="lazy">
   <div>
     <div class="on-eyebrow">Out now</div>
     <div class="on-title">HIGHS &amp; LOWS</div>
     <div class="on-listen">Listen &#8594;&#xFE0E;</div>
   </div>
   <a href="https://open.spotify.com/album/35phdmUKBinvz3N2VM6pNi" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Listen to HIGHS &amp; LOWS"></a>
-  <button class="on-x" id="outnow-x" aria-label="Dismiss">&times;</button>
+  <button class="on-x" aria-label="Dismiss">&times;</button>
 </div>
+</div>
+<div class="world" data-artist="mazze">
+<div class="rail" aria-label="MAZZE streaming platforms">
+    <a class="rail-btn rail-spotify" href="https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh" target="_blank" rel="noopener" aria-label="Mazze on Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></a>
+    <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/mazze/1378716604" target="_blank" rel="noopener" aria-label="Mazze on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
+    <a class="rail-btn rail-soundcloud" href="https://soundcloud.com/mmazzeo" target="_blank" rel="noopener" aria-label="Mazze on SoundCloud"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c.014.06.045.098.09.098.057 0 .091-.037.105-.098l.194-1.308-.194-1.332c-.014-.057-.05-.094-.09-.094m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.104.119.104.061 0 .105-.045.121-.104l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.077.075.138.149.138.075 0 .135-.061.15-.15l.24-2.532-.24-2.623c0-.075-.06-.135-.135-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c0 .09.075.157.159.157.074 0 .148-.068.148-.158l.227-2.563-.227-2.444.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957.187 2.563c0 .09.08.164.18.164.094 0 .174-.09.18-.18l.209-2.563-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914c-.105 0-.195.09-.203.194l-.18 4.872.165 2.548c0 .12.09.209.195.209.104 0 .194-.089.21-.209l.193-2.548-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275.165 2.52c.014.119.104.225.225.225.119 0 .225-.105.225-.225l.195-2.52-.196-5.275c0-.12-.105-.225-.225-.225m1.245.045c0-.135-.105-.24-.24-.24-.119 0-.24.105-.24.24l-.149 5.441.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503-.164-5.456-.016.015zm.749-.134c-.135 0-.255.119-.255.254l-.15 5.322.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474-.165-5.307c0-.148-.115-.253-.25-.253m1.005.166c-.164 0-.284.135-.284.285l-.103 5.143.135 2.474c0 .149.119.277.284.277.149 0 .271-.128.284-.284l.121-2.443-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.104 6.048.115 2.449v.008c.008.06.03.135.074.18.06.075.15.12.24.12.074 0 .149-.03.195-.09.06-.052.09-.127.09-.21l.015-.24.117-2.203-.135-6.086c0-.104-.061-.193-.135-.239l.007-.053zm1.006-.547c-.045-.045-.09-.061-.15-.061-.074 0-.149.016-.209.061-.075.061-.119.15-.119.24v.029l-.137 6.609.076 1.215.061 1.185c0 .164.148.314.328.314.181 0 .33-.15.33-.329l.15-2.414-.15-6.637c0-.12-.074-.221-.165-.277l-.015.065zm8.934 3.777c-.405 0-.795.086-1.139.232-.24-2.654-2.46-4.736-5.188-4.736-.659 0-1.305.135-1.889.359-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/></svg></a>
+    <a class="rail-btn rail-youtube" href="https://www.youtube.com/@elmazze" target="_blank" rel="noopener" aria-label="Mazze on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a class="rail-btn rail-instagram" href="https://www.instagram.com/elmazze" target="_blank" rel="noopener" aria-label="Mazze on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    <a class="rail-btn rail-x" href="https://x.com/s333xgod" target="_blank" rel="noopener" aria-label="Mazze on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+</div>
+
+<header class="hero">
+  <div class="hero-collage" aria-hidden="true">
+    <img src="art/disimula.jpg" alt="">
+    <img src="art/money-ick.jpg" alt="">
+    <img src="art/android-17.jpg" alt="">
+    <img src="art/shake-sum.jpg" alt="">
+    <img src="art/triple-s.jpg" alt="">
+    <img src="art/erase-u.jpg" alt="">
+    <img src="art/bebe-rica.jpg" alt="" loading="lazy">
+    <img src="art/animal-print.jpg" alt="" loading="lazy">
+    <img src="art/free-young-thug.jpg" alt="" loading="lazy">
+    <img src="art/xoxo.jpg" alt="" loading="lazy">
+    <img src="art/cornicello.jpg" alt="" loading="lazy">
+    <img src="art/mate.jpg" alt="" loading="lazy">
+    <img src="art/disimula.jpg" alt="" loading="lazy">
+    <img src="art/money-ick.jpg" alt="" loading="lazy">
+    <img src="art/android-17.jpg" alt="" loading="lazy">
+    <img src="art/shake-sum.jpg" alt="" loading="lazy">
+    <img src="art/triple-s.jpg" alt="" loading="lazy">
+    <img src="art/erase-u.jpg" alt="" loading="lazy">
+    <img src="art/bebe-rica.jpg" alt="" loading="lazy">
+    <img src="art/animal-print.jpg" alt="" loading="lazy">
+    <img src="art/free-young-thug.jpg" alt="" loading="lazy">
+    <img src="art/xoxo.jpg" alt="" loading="lazy">
+    <img src="art/cornicello.jpg" alt="" loading="lazy">
+    <img src="art/mate.jpg" alt="" loading="lazy">
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <img class="emblem" src="emblem-mazze.png" alt="Hand-drawn skull and crossbones with 333 on the forehead, the Mazze emblem" width="158" loading="lazy">
+    <h1>MAZZE</h1>
+    <p class="hero-out">DISIMULA &mdash; out now</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Play on Spotify</a>
+      <a class="btn btn-ghost" href="https://music.apple.com/us/album/disimula-single/6784050950" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:70px">
+  <div class="wrap latest">
+    <img class="latest-art" src="art/disimula.jpg" alt="DISIMULA cover art" width="600" height="600" loading="lazy">
+    <div class="latest-info">
+      <p class="eyebrow">Latest release</p>
+      <h2 class="latest-title">DISIMULA</h2>
+      <p class="meta"><b>Single</b> &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; 2 tracks</p>
+      <p class="everywhere">Out now, everywhere.</p>
+      <div class="cta-row" style="justify-content:flex-start">
+        <a class="btn btn-solid" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Spotify</a>
+        <a class="btn btn-ghost" style="background:none" href="https://music.apple.com/us/album/disimula-single/6784050950" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tracks" style="padding-top:0" id="music-mazze">
+  <div class="wrap">
+    <div class="sec-head"><h2>Stream now</h2><span class="eyebrow">21 releases</span></div>
+    <div class="grid">
+      <a class="card" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/disimula.jpg" alt="DISIMULA cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">DISIMULA</span><span class="card-year">2026</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/money-%24ick-single/6772772497" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/money-ick.jpg" alt="MONEY $ICK cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">MONEY $ICK</span><span class="card-year">2026</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/android-17-single/1880834580" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/android-17.jpg" alt="ANDROID 17 cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">ANDROID 17</span><span class="card-year">2026</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/shake-sum-single/1874232372" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/shake-sum.jpg" alt="Shake Sum cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Shake Sum</span><span class="card-year">2026</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/%24%24%24-single/1869241710" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/triple-s.jpg" alt="$$$ cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">$$$</span><span class="card-year">2026</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/erase-u-single/1852510433" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/erase-u.jpg" alt="erase u cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">erase u</span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/bebe-rica-single/1844205763" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/bebe-rica.jpg" alt="BeBe Rica cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">BeBe Rica</span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/animal-print-feat-santorino-single/1788942346" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/animal-print.jpg" alt="Animal Print cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Animal Print <span class="card-feat">feat. Santorino</span></span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/free-young-thug-single/1774736321" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/free-young-thug.jpg" alt="FREE YOUNG THUG cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">FREE YOUNG THUG</span><span class="card-year">2024</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/xoxo-single/1741712659" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/xoxo.jpg" alt="XOXO cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">XOXO</span><span class="card-year">2024</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/cornicello-single/1708692687" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/cornicello.jpg" alt="CORNICELLO cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">CORNICELLO</span><span class="card-year">2023</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/mate-single/1678969166" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/mate.jpg" alt="MATE cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">MATE</span><span class="card-year">2023</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/el-%C3%BAltimo-perreo-single/1659580509" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/el-ltimo-perreo.jpg" alt="EL ÚLTIMO PERREO cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">EL ÚLTIMO PERREO</span><span class="card-year">2022</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/heartbreak-kid-single/1593867157" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/heartbreak-kid.jpg" alt="Heartbreak Kid cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Heartbreak Kid</span><span class="card-year">2021</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/avaricia-single/1496922438" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/avaricia.jpg" alt="Avaricia cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Avaricia</span><span class="card-year">2020</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/sobrenatural-single/1484039179" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/sobrenatural.jpg" alt="Sobrenatural cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Sobrenatural</span><span class="card-year">2019</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/la-amiga-single/1476353489" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/la-amiga.jpg" alt="La Amiga cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">La Amiga</span><span class="card-year">2019</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/sensata-single/1468854261" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/sensata.jpg" alt="SenSata cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">SenSata</span><span class="card-year">2019</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/blown-up-single/1454569664" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/blown-up.jpg" alt="Blown Up cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Blown Up</span><span class="card-year">2019</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/besarte-feat-santorino-single/1436750454" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/besarte.jpg" alt="Besarte cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Besarte <span class="card-feat">feat. Santorino</span></span><span class="card-year">2018</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/el-comienzo-single/1371181178" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/el-comienzo.jpg" alt="El Comienzo cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">El Comienzo</span><span class="card-year">2018</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>With S333XGOD</h2><span class="eyebrow">9 tracks</span></div>
+    <div class="strip">
+      <a class="card" href="https://music.apple.com/us/album/miss-your-touch-feat-mazze-single/1837920015" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/miss-your-touch.jpg" alt="MiSS YoUR TOucH cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">MiSS YoUR TOucH <span class="card-feat">feat. Mazze</span></span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/space-feat-mazze-single/1814366288" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/space.jpg" alt="Space cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Space <span class="card-feat">feat. Mazze</span></span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/the-rush-feat-mazze-single/1804550808" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/the-rush.jpg" alt="The Rush cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">The Rush <span class="card-feat">feat. Mazze</span></span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/moonlight-feat-mazze-single/1793410252" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/moonlight.jpg" alt="Moonlight cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Moonlight <span class="card-feat">feat. Mazze</span></span><span class="card-year">2025</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/dark-triad-feat-mazze-single/1770846923" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/dark-triad.jpg" alt="Dark Triad cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Dark Triad <span class="card-feat">feat. Mazze</span></span><span class="card-year">2024</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/heroine-feat-mazze-single/1725256885" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/heroine.jpg" alt="Heroine cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Heroine <span class="card-feat">feat. Mazze</span></span><span class="card-year">2024</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/s333x-feat-mazze-single/1710924828" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/s333x.jpg" alt="S333X cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">S333X <span class="card-feat">feat. Mazze</span></span><span class="card-year">2023</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/it-never-ends-feat-mazze-single/1701265157" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/it-never-ends.jpg" alt="It Never Ends cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">It Never Ends <span class="card-feat">feat. Mazze</span></span><span class="card-year">2023</span></div>
+      </a>
+      <a class="card" href="https://music.apple.com/us/album/black-star-feat-mazze-single/1694952059" target="_blank" rel="noopener">
+        <div class="card-art"><img src="art/black-star.jpg" alt="Black Star cover art" width="600" height="600" loading="lazy"></div>
+        <div class="card-cap"><span class="card-name">Black Star <span class="card-feat">feat. Mazze</span></span><span class="card-year">2023</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0" id="links-mazze">
+  <div class="wrap">
+    <div class="sec-head"><h2>MAZZE everywhere</h2></div>
+    <div class="plinks">
+      <a class="plink" href="https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh" target="_blank" rel="noopener">
+        <span class="ico rail-spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></span>
+        <span class="pname">Spotify</span>
+        <span class="ptype">artist &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://open.spotify.com/playlist/1Jk3orHi4S4K0XZ7R8fZwW" target="_blank" rel="noopener">
+        <span class="ico rail-spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></span>
+        <span class="pname">The Complete Works</span>
+        <span class="ptype">playlist &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://music.apple.com/us/artist/mazze/1378716604" target="_blank" rel="noopener">
+        <span class="ico rail-apple"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></span>
+        <span class="pname">Apple Music</span>
+        <span class="ptype">artist &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://soundcloud.com/mmazzeo" target="_blank" rel="noopener">
+        <span class="ico rail-soundcloud"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c.014.06.045.098.09.098.057 0 .091-.037.105-.098l.194-1.308-.194-1.332c-.014-.057-.05-.094-.09-.094m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.104.119.104.061 0 .105-.045.121-.104l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.077.075.138.149.138.075 0 .135-.061.15-.15l.24-2.532-.24-2.623c0-.075-.06-.135-.135-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c0 .09.075.157.159.157.074 0 .148-.068.148-.158l.227-2.563-.227-2.444.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957.187 2.563c0 .09.08.164.18.164.094 0 .174-.09.18-.18l.209-2.563-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914c-.105 0-.195.09-.203.194l-.18 4.872.165 2.548c0 .12.09.209.195.209.104 0 .194-.089.21-.209l.193-2.548-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275.165 2.52c.014.119.104.225.225.225.119 0 .225-.105.225-.225l.195-2.52-.196-5.275c0-.12-.105-.225-.225-.225m1.245.045c0-.135-.105-.24-.24-.24-.119 0-.24.105-.24.24l-.149 5.441.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503-.164-5.456-.016.015zm.749-.134c-.135 0-.255.119-.255.254l-.15 5.322.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474-.165-5.307c0-.148-.115-.253-.25-.253m1.005.166c-.164 0-.284.135-.284.285l-.103 5.143.135 2.474c0 .149.119.277.284.277.149 0 .271-.128.284-.284l.121-2.443-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.104 6.048.115 2.449v.008c.008.06.03.135.074.18.06.075.15.12.24.12.074 0 .149-.03.195-.09.06-.052.09-.127.09-.21l.015-.24.117-2.203-.135-6.086c0-.104-.061-.193-.135-.239l.007-.053zm1.006-.547c-.045-.045-.09-.061-.15-.061-.074 0-.149.016-.209.061-.075.061-.119.15-.119.24v.029l-.137 6.609.076 1.215.061 1.185c0 .164.148.314.328.314.181 0 .33-.15.33-.329l.15-2.414-.15-6.637c0-.12-.074-.221-.165-.277l-.015.065zm8.934 3.777c-.405 0-.795.086-1.139.232-.24-2.654-2.46-4.736-5.188-4.736-.659 0-1.305.135-1.889.359-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/></svg></span>
+        <span class="pname">SoundCloud</span>
+        <span class="ptype">profile &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://www.youtube.com/@elmazze" target="_blank" rel="noopener">
+        <span class="ico rail-youtube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span>
+        <span class="pname">YouTube</span>
+        <span class="ptype">channel &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://www.instagram.com/elmazze" target="_blank" rel="noopener">
+        <span class="ico rail-instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></span>
+        <span class="pname">Instagram</span>
+        <span class="ptype">profile &#8599;&#xFE0E;</span>
+      </a>
+      <a class="plink" href="https://x.com/s333xgod" target="_blank" rel="noopener">
+        <span class="ico rail-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
+        <span class="pname">X</span>
+        <span class="ptype">profile &#8599;&#xFE0E;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <blockquote class="quote">&ldquo;We are all equal, regardless of our differences.&rdquo;<footer>&mdash; MAZZE</footer></blockquote>
+  </div>
+</section>
+<footer class="site-foot">
+  <img src="emblem-mazze.png" alt="" loading="lazy">
+  <div>&copy; 2026 MAZZE. All rights reserved.</div>
+</footer>
+
+<div class="outnow">
+  <img src="art/disimula.jpg" alt="" loading="lazy">
+  <div>
+    <div class="on-eyebrow">Out now</div>
+    <div class="on-title">DISIMULA</div>
+    <div class="on-listen">Listen &#8594;&#xFE0E;</div>
+  </div>
+  <a href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Listen to DISIMULA"></a>
+  <button class="on-x" aria-label="Dismiss">&times;</button>
+</div>
+</div>
+
 <script>
   (function(){
-    var card=document.getElementById('outnow'),x=document.getElementById('outnow-x');
-    var closed=false; try{closed=sessionStorage.getItem('outnow-closed')==='1'}catch(e){}
-    if(!closed){setTimeout(function(){card.hidden=false},1600)}
-    x.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();card.hidden=true;
-      try{sessionStorage.setItem('outnow-closed','1')}catch(e){}});
+    var DEFAULT=(location.hash==='#mazze')?'mazze':(location.hash==='#s333xgod')?'s333xgod':"s333xgod";
+    var worlds=document.querySelectorAll('.world');
+    var tabs=document.querySelectorAll('.sw');
+    var listen=document.getElementById('listen-link');
+    function setArtist(key){
+      document.body.dataset.artist=key;
+      worlds.forEach(function(w){w.hidden=w.dataset.artist!==key});
+      tabs.forEach(function(t){t.setAttribute('aria-selected',String(t.dataset.artist===key))});
+      listen.setAttribute('href','#links-'+key);
+      document.title=key==='mazze'?'MAZZE':'S333XGOD';
+    }
+    tabs.forEach(function(t){t.addEventListener('click',function(){
+      if(document.body.dataset.artist!==t.dataset.artist){setArtist(t.dataset.artist);window.scrollTo({top:0,behavior:'auto'});
+        try{history.replaceState(null,'',location.pathname+(t.dataset.artist==='mazze'?'#mazze':''))}catch(e){}}
+    })});
+    setArtist(DEFAULT);
+    document.querySelectorAll('.outnow').forEach(function(card){
+      var closed=false; try{closed=sessionStorage.getItem('outnow-closed')==='1'}catch(e){}
+      if(closed) card.classList.add('dismissed');
+      card.querySelector('.on-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+        document.querySelectorAll('.outnow').forEach(function(c){c.classList.add('dismissed')});
+        try{sessionStorage.setItem('outnow-closed','1')}catch(e){}});
+    });
   })();
 </script>
 
