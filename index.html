@@ -29,7 +29,7 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
   a{color:inherit;text-decoration:none}
   a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
   img{max-width:100%;display:block}
@@ -98,20 +98,20 @@
 
   /* latest release */
   .latest{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:52px;align-items:center}
-  .latest-art{position:relative;border:1px solid var(--hairline);
+  .latest-art{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--hairline);
     box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 90px rgba(63,216,234,.3)}
   .latest-info{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
   .latest-info .meta{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .latest-info .meta b{color:var(--accent);font-weight:700}
   .latest-title{font-family:var(--anton);font-weight:400;font-size:clamp(44px,7.5vw,84px);line-height:1.04;letter-spacing:.02em;margin:0;text-wrap:balance}
   .latest-info .everywhere{color:var(--silver);font-size:18px;margin:0}
-  @media(max-width:840px){.latest{grid-template-columns:1fr;gap:34px}.latest-art{max-width:420px}}
+  @media(max-width:840px){.latest{grid-template-columns:1fr;gap:34px}.latest-art{max-width:min(420px,100%)}}
 
   /* stream grid */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:30px 26px}
   .card{display:flex;flex-direction:column;gap:12px;min-width:0}
   .card-art{overflow:hidden;border:1px solid var(--hairline);transition:border-color .25s}
-  .card-art img{aspect-ratio:1;width:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .card-art img{aspect-ratio:1;width:100%;height:auto;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
   .card:hover .card-art{border-color:var(--accent)}
   .card:hover .card-art img{transform:scale(1.045)}
   .card-cap{display:flex;justify-content:space-between;gap:14px;align-items:baseline;min-width:0}
