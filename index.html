@@ -144,9 +144,13 @@
     scrollbar-width:thin;scrollbar-color:var(--muted) transparent}
   .strip .card-name{font-size:13.5px}
 
-  /* videos */
-  .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px 24px}
-  .vcard{display:flex;flex-direction:column;gap:12px;min-width:0}
+  /* videos carousel */
+  .vstrip{display:grid;grid-auto-flow:column;grid-auto-columns:min(360px,80vw);gap:20px;overflow-x:auto;
+    padding-bottom:16px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;
+    scrollbar-width:thin;scrollbar-color:var(--muted) transparent}
+  .vstrip::-webkit-scrollbar{height:8px}
+  .vstrip::-webkit-scrollbar-thumb{background:var(--hairline);border-radius:99px}
+  .vcard{display:flex;flex-direction:column;gap:12px;min-width:0;scroll-snap-align:start}
   .vthumb{position:relative;overflow:hidden;aspect-ratio:16/9;background:#000;outline:1px solid transparent;outline-offset:-1px;transition:outline-color .25s}
   .vthumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
   .vthumb .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:auto;
@@ -160,7 +164,6 @@
     .vcard:hover .play-bg{fill:var(--accent);fill-opacity:1}
   }
   .vtitle{font-weight:600;font-size:15px;letter-spacing:.02em;overflow-wrap:anywhere}
-  @media(max-width:560px){.vgrid{grid-template-columns:1fr;gap:22px}}
 
   .plinks{border-top:1px solid var(--hairline)}
   .plink{display:flex;align-items:center;gap:20px;padding-block:22px;border-bottom:1px solid var(--hairline)}
@@ -255,6 +258,21 @@
   </div>
 </section>
 
+<section style="padding-top:0" id="videos-s333xgod">
+  <div class="wrap">
+    <div class="sec-head"><h2>Videos</h2><span class="eyebrow">2 music videos</span></div>
+    <div class="vstrip">
+      <a class="vcard" href="https://youtu.be/Vp6u5JYvSfA" target="_blank" rel="noopener" aria-label="Watch LOW on YouTube">
+        <div class="vthumb"><img src="video/Vp6u5JYvSfA.jpg" alt="LOW video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">LOW</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/R1fUYfl7z-Y" target="_blank" rel="noopener" aria-label="Watch S333X on YouTube">
+        <div class="vthumb"><img src="video/R1fUYfl7z-Y.jpg" alt="S333X video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">S333X <span class="card-feat">feat. Mazze</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>
 <section class="tracks" style="padding-top:0" id="music-s333xgod">
   <div class="wrap">
     <div class="sec-head"><h2>Stream now</h2><span class="eyebrow">15 releases</span></div>
@@ -323,22 +341,6 @@
   </div>
 </section>
 
-
-<section style="padding-top:0" id="videos-s333xgod">
-  <div class="wrap">
-    <div class="sec-head"><h2>Videos</h2><span class="eyebrow">2 music videos</span></div>
-    <div class="vgrid">
-      <a class="vcard" href="https://youtu.be/Vp6u5JYvSfA" target="_blank" rel="noopener" aria-label="Watch LOW on YouTube">
-        <div class="vthumb"><img src="video/Vp6u5JYvSfA.jpg" alt="LOW video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">LOW</span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/R1fUYfl7z-Y" target="_blank" rel="noopener" aria-label="Watch S333X on YouTube">
-        <div class="vthumb"><img src="video/R1fUYfl7z-Y.jpg" alt="S333X video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">S333X <span class="card-feat">feat. Mazze</span></span></div>
-      </a>
-    </div>
-  </div>
-</section>
 <section style="padding-top:0" id="links-s333xgod">
   <div class="wrap">
     <div class="sec-head"><h2>S333XGOD everywhere</h2></div>
@@ -455,6 +457,41 @@
   </div>
 </section>
 
+<section style="padding-top:0" id="videos-mazze">
+  <div class="wrap">
+    <div class="sec-head"><h2>Videos</h2><span class="eyebrow">7 music videos</span></div>
+    <div class="vstrip">
+      <a class="vcard" href="https://youtu.be/AOVYdpKheyg" target="_blank" rel="noopener" aria-label="Watch MONEY $ICK on YouTube">
+        <div class="vthumb"><img src="video/AOVYdpKheyg.jpg" alt="MONEY $ICK video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">MONEY $ICK</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/ctkPKXfBEmg" target="_blank" rel="noopener" aria-label="Watch Shake Sum on YouTube">
+        <div class="vthumb"><img src="video/ctkPKXfBEmg.jpg" alt="Shake Sum video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">Shake Sum</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/zpNmPcdjq1k" target="_blank" rel="noopener" aria-label="Watch erase u on YouTube">
+        <div class="vthumb"><img src="video/zpNmPcdjq1k.jpg" alt="erase u video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">erase u</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/NybjF0u53EA" target="_blank" rel="noopener" aria-label="Watch 3AM on YouTube">
+        <div class="vthumb"><img src="video/NybjF0u53EA.jpg" alt="3AM video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">3AM <span class="card-feat">A Short Film</span></span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/gGNnmHBohVU" target="_blank" rel="noopener" aria-label="Watch Animal Print on YouTube">
+        <div class="vthumb"><img src="video/gGNnmHBohVU.jpg" alt="Animal Print video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">Animal Print <span class="card-feat">feat. Santorino24k</span></span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/GIIGJKsDvCg" target="_blank" rel="noopener" aria-label="Watch XOXO on YouTube">
+        <div class="vthumb"><img src="video/GIIGJKsDvCg.jpg" alt="XOXO video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">XOXO</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/pOiwr-UGn5w" target="_blank" rel="noopener" aria-label="Watch Heartbreak Kid on YouTube">
+        <div class="vthumb"><img src="video/pOiwr-UGn5w.jpg" alt="Heartbreak Kid video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
+        <div class="vcap"><span class="vtitle">Heartbreak Kid</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 <section class="tracks" style="padding-top:0" id="music-mazze">
   <div class="wrap">
     <div class="sec-head"><h2>Stream now</h2><span class="eyebrow">21 releases</span></div>
@@ -586,42 +623,6 @@
       <a class="card" href="https://music.apple.com/us/album/black-star-feat-mazze-single/1694952059" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/black-star.jpg" alt="Black Star cover art" width="600" height="600" loading="lazy"></div>
         <div class="card-cap"><span class="card-name">Black Star <span class="card-feat">feat. Mazze</span></span><span class="card-year">2023</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0" id="videos-mazze">
-  <div class="wrap">
-    <div class="sec-head"><h2>Videos</h2><span class="eyebrow">7 music videos</span></div>
-    <div class="vgrid">
-      <a class="vcard" href="https://youtu.be/AOVYdpKheyg" target="_blank" rel="noopener" aria-label="Watch MONEY $ICK on YouTube">
-        <div class="vthumb"><img src="video/AOVYdpKheyg.jpg" alt="MONEY $ICK video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">MONEY $ICK</span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/ctkPKXfBEmg" target="_blank" rel="noopener" aria-label="Watch Shake Sum on YouTube">
-        <div class="vthumb"><img src="video/ctkPKXfBEmg.jpg" alt="Shake Sum video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">Shake Sum</span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/zpNmPcdjq1k" target="_blank" rel="noopener" aria-label="Watch erase u on YouTube">
-        <div class="vthumb"><img src="video/zpNmPcdjq1k.jpg" alt="erase u video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">erase u</span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/NybjF0u53EA" target="_blank" rel="noopener" aria-label="Watch 3AM on YouTube">
-        <div class="vthumb"><img src="video/NybjF0u53EA.jpg" alt="3AM video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">3AM <span class="card-feat">A Short Film</span></span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/gGNnmHBohVU" target="_blank" rel="noopener" aria-label="Watch Animal Print on YouTube">
-        <div class="vthumb"><img src="video/gGNnmHBohVU.jpg" alt="Animal Print video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">Animal Print <span class="card-feat">feat. Santorino24k</span></span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/GIIGJKsDvCg" target="_blank" rel="noopener" aria-label="Watch XOXO on YouTube">
-        <div class="vthumb"><img src="video/GIIGJKsDvCg.jpg" alt="XOXO video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">XOXO</span></div>
-      </a>
-      <a class="vcard" href="https://youtu.be/pOiwr-UGn5w" target="_blank" rel="noopener" aria-label="Watch Heartbreak Kid on YouTube">
-        <div class="vthumb"><img src="video/pOiwr-UGn5w.jpg" alt="Heartbreak Kid video thumbnail" width="480" height="270" loading="lazy"><svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg></div>
-        <div class="vcap"><span class="vtitle">Heartbreak Kid</span></div>
       </a>
     </div>
   </div>
