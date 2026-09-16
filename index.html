@@ -14,15 +14,21 @@
 <meta property="og:image" content="https://ronsollc.com/s333xgod-music/art/highs-lows.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#060708">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"S333XGOD","url":"https://ronsollc.com/s333xgod-music/","sameAs":["https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl","https://music.apple.com/us/artist/s333xgod/1694914218","https://soundcloud.com/s333xgod","https://www.youtube.com/channel/UCTZlvjEmjxjprBtlcSNA5uw","https://www.instagram.com/s333xgod","https://x.com/s333xgod","https://genius.com/artists/S333xgod"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"MAZZE","url":"https://ronsollc.com/s333xgod-music/#mazze","sameAs":["https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh","https://music.apple.com/us/artist/mazze/1378716604","https://soundcloud.com/mmazzeo","https://www.youtube.com/@elmazze","https://www.instagram.com/elmazze","https://x.com/s333xgod"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="bg-s333xgod.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap">
 <style>
-  body[data-artist="s333xgod"]{--bg:#060708;--panel:#10141a;--muted:#8a919b;--accent:#3fd8ea;--glow:rgba(63,216,234,.3);--hairline:rgba(195,205,214,.16)}
+  /* s333xgod is the default palette on :root so themed vars resolve before JS runs (no white flash) */
+  :root{--bg:#060708;--panel:#10141a;--muted:#8a919b;--accent:#3fd8ea;--glow:rgba(63,216,234,.3);--hairline:rgba(195,205,214,.16);
+    --ink:#e9edf1;--silver:#c3cdd6;--anton:'Anton',Impact,'Arial Narrow',sans-serif;--grain:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'180'%20height%3D'180'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.85'%20numOctaves%3D'2'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'saturate'%20values%3D'0'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'180'%20height%3D'180'%20filter%3D'url(%23n)'%20opacity%3D'0.4'%2F%3E%3C%2Fsvg%3E")}
   body[data-artist="mazze"]{--bg:#070806;--panel:#111410;--muted:#8b9287;--accent:#79e14a;--glow:rgba(121,225,74,.28);--hairline:rgba(198,206,195,.16)}
-  :root{--ink:#e9edf1;--silver:#c3cdd6;--anton:'Anton',Impact,'Arial Narrow',sans-serif;--grain:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'180'%20height%3D'180'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.85'%20numOctaves%3D'2'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'saturate'%20values%3D'0'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'180'%20height%3D'180'%20filter%3D'url(%23n)'%20opacity%3D'0.4'%2F%3E%3C%2Fsvg%3E")}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
-    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .4s}
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;transition:background .4s}
   a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
   img{max-width:100%;display:block}
@@ -39,7 +45,7 @@
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--hairline)}
   .switch{display:flex;gap:24px}
   .sw{font-family:var(--anton);font-weight:400;font-size:15px;letter-spacing:.1em;
-    background:none;border:0;color:rgba(255,255,255,.4);padding:6px 2px;cursor:pointer;position:relative;transition:color .25s}
+    background:none;border:0;color:rgba(255,255,255,.6);padding:6px 2px;cursor:pointer;position:relative;transition:color .25s}
   .sw::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);
     transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
   .sw[aria-selected="true"]{color:#fff}
@@ -51,7 +57,7 @@
   @media(max-width:430px){.sw{padding:8px 11px;font-size:12.5px}.nav .pill{padding:8px 12px;letter-spacing:.12em}}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:94svh;display:block;overflow:hidden}
+  .hero{position:relative;min-height:94vh;min-height:94svh;display:block;overflow:hidden}
   .hero-collage{position:absolute;inset:-3%;display:grid;grid-template-columns:repeat(6,1fr);align-content:start;gap:6px;z-index:0;
     filter:brightness(.42) saturate(1.15);animation:drift 46s ease-in-out infinite alternate}
   .hero-collage img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
@@ -64,14 +70,14 @@
     radial-gradient(130% 100% at 50% 30%, transparent 55%, rgba(0,0,0,.42) 100%)}
   .hero-grain{position:absolute;inset:0;z-index:1;opacity:.45;mix-blend-mode:overlay;pointer-events:none;
     background-image:var(--grain);background-size:180px 180px}
-  .hero-inner{position:relative;z-index:2;min-height:94svh;max-width:1060px;margin:0 auto;
+  .hero-inner{position:relative;z-index:2;min-height:94vh;min-height:94svh;max-width:1060px;margin:0 auto;
     display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;gap:14px;
     padding:130px 22px 76px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
   @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
   .hero-inner img.emblem{height:auto;filter:drop-shadow(0 6px 26px var(--glow));margin-bottom:2px}
   .hero-out b{color:var(--accent);font-weight:700}
   h1{font-family:var(--anton);font-weight:400;margin:0 0 0 -3px;color:#fff;
-    font-size:clamp(68px,15vw,200px);line-height:.98;letter-spacing:.01em;
+    font-size:clamp(56px,14.5vw,200px);line-height:.98;letter-spacing:.01em;
     text-shadow:0 6px 70px rgba(0,0,0,.6)}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;margin-top:14px}
   .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 28px;
@@ -79,7 +85,7 @@
   .btn:active{transform:scale(.97)}
   .btn-solid{background:#fff;color:#0a0a0c}
   .btn-solid:hover{background:var(--accent);color:#050607}
-  .btn-ghost{border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(0,0,0,.25);backdrop-filter:blur(6px)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(0,0,0,.25);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
   .hero-out{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--silver);margin:0}
 
@@ -87,20 +93,23 @@
   .rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:38;display:flex;flex-direction:column;gap:9px}
   .rail-btn,.plink .ico{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
     color:var(--silver);background:rgba(255,255,255,.04);border:1px solid var(--hairline);
-    backdrop-filter:blur(8px);transition:transform .15s,background .2s,color .2s,border-color .2s}
-  .rail-btn:hover{transform:scale(1.1)}
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .15s,background .2s,color .2s,border-color .2s}
   .rail-btn svg{width:19px;height:19px}
-  .rail-spotify:hover,.plink:hover .rail-spotify{background:#1db954;color:#fff;border-color:transparent}
-  .rail-apple:hover,.plink:hover .rail-apple{background:linear-gradient(135deg,#fb5c74,#fa233b);color:#fff;border-color:transparent}
-  .rail-soundcloud:hover,.plink:hover .rail-soundcloud{background:#f50;color:#fff;border-color:transparent}
-  .rail-youtube:hover,.plink:hover .rail-youtube{background:#f00;color:#fff;border-color:transparent}
-  .rail-x:hover,.plink:hover .rail-x{background:#000;color:#fff;border-color:rgba(255,255,255,.4)}
-  .rail-genius:hover,.plink:hover .rail-genius{background:#ffff64;color:#111;border-color:transparent}
-  .rail-instagram:hover,.plink:hover .rail-instagram{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;border-color:transparent}
-  @media(max-width:980px){.rail{display:none}}
+  /* brand fills only on real hover devices, so they don't stick after a tap on touch */
+  @media (hover:hover){
+    .rail-btn:hover{transform:scale(1.1)}
+    .rail-spotify:hover,.plink:hover .rail-spotify{background:#1db954;color:#fff;border-color:transparent}
+    .rail-apple:hover,.plink:hover .rail-apple{background:linear-gradient(135deg,#fb5c74,#fa233b);color:#fff;border-color:transparent}
+    .rail-soundcloud:hover,.plink:hover .rail-soundcloud{background:#f50;color:#fff;border-color:transparent}
+    .rail-youtube:hover,.plink:hover .rail-youtube{background:#f00;color:#fff;border-color:transparent}
+    .rail-x:hover,.plink:hover .rail-x{background:#000;color:#fff;border-color:rgba(255,255,255,.4)}
+    .rail-genius:hover,.plink:hover .rail-genius{background:#ffff64;color:#111;border-color:transparent}
+    .rail-instagram:hover,.plink:hover .rail-instagram{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;border-color:transparent}
+  }
+  @media(max-width:1200px){.rail{display:none}}
 
   /* ---------- sections ---------- */
-  section{padding-block:84px}
+  section{padding-block:84px;scroll-margin-top:78px}
   .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:34px}
   .sec-head h2{font-family:var(--anton);font-weight:400;font-size:clamp(30px,5vw,44px);letter-spacing:.03em;margin:0;color:var(--ink)}
   .sec-head .eyebrow{white-space:nowrap}
@@ -119,8 +128,12 @@
   .card{display:flex;flex-direction:column;gap:12px;min-width:0}
   .card-art{overflow:hidden;transition:outline-color .25s;outline:1px solid transparent;outline-offset:-1px}
   .card-art img{aspect-ratio:1;width:100%;height:auto;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-  .card:hover .card-art{outline-color:var(--accent)}
-  .card:hover .card-art img{transform:scale(1.045)}
+  @media (hover:hover){
+    .card:hover .card-art{outline-color:var(--accent)}
+    .card:hover .card-art img{transform:scale(1.045)}
+    .plink:hover .pname{color:var(--accent)}
+  }
+  .card:active,.plink:active{opacity:.6}
   .card-cap{display:flex;justify-content:space-between;gap:14px;align-items:baseline;min-width:0}
   .card-name{font-weight:600;font-size:15px;letter-spacing:.02em;overflow-wrap:anywhere}
   .card-feat{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
@@ -137,10 +150,11 @@
   .plink .ico svg{width:18px;height:18px}
   .plink .pname{font-family:var(--anton);font-weight:400;font-size:clamp(20px,4vw,32px);letter-spacing:.03em;transition:color .2s;min-width:0;overflow-wrap:anywhere}
   .plink .ptype{margin-left:auto;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
-  .plink:hover .pname{color:var(--accent)}
 
-  .quote{margin:0;padding-left:24px;border-left:2px solid var(--accent);color:var(--silver);font-size:20px;line-height:1.7;max-width:34em}
-  .quote footer{padding-top:10px;font-size:12px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase}
+  .quote{margin:0;max-width:15em;font-family:var(--anton);font-weight:400;font-size:clamp(32px,6vw,64px);
+    line-height:1.03;letter-spacing:.01em;color:var(--ink);text-wrap:balance}
+  .quote footer{margin-top:22px;font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:700;
+    color:var(--muted);letter-spacing:.24em;text-transform:uppercase}
 
   .contact-lede{color:var(--muted);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 14px}
   .contact-mail{display:inline-block;font-family:var(--anton);font-weight:400;font-size:clamp(26px,5.6vw,54px);
@@ -148,12 +162,13 @@
     padding-bottom:4px;transition:color .2s,border-color .2s;overflow-wrap:anywhere}
   .contact-mail:hover{color:var(--accent);border-color:var(--accent)}
 
-  .site-foot{border-top:1px solid var(--hairline);padding-block:54px 64px;text-align:center;color:var(--muted);font-size:13px}
-  .site-foot img{width:54px;margin:0 auto 16px;opacity:.85}
+  .site-foot{border-top:1px solid var(--hairline);padding-block:40px 60px;color:var(--muted);font-size:13px}
+  .site-foot .wrap{display:flex;align-items:center;gap:16px}
+  .site-foot img{width:40px;opacity:.85}
 
   .outnow{position:fixed;right:20px;bottom:20px;z-index:39;display:flex;align-items:center;gap:14px;
-    background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(12px);
-    border:1px solid var(--hairline);border-radius:14px;padding:10px 40px 10px 10px;
+    background:color-mix(in srgb,var(--panel) 88%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    border:1px solid var(--hairline);border-radius:14px;padding:10px 44px 10px 10px;
     box-shadow:0 16px 44px rgba(0,0,0,.55);max-width:290px}
   .outnow.dismissed{display:none}
   .outnow img{width:56px;height:56px;object-fit:cover}
@@ -161,7 +176,7 @@
   .outnow .on-title{font-weight:700;font-size:14px;line-height:1.3}
   .outnow .on-listen{font-size:12px;color:var(--muted)}
   .outnow:hover .on-listen{color:var(--accent)}
-  .outnow .on-x{position:absolute;top:6px;right:8px;background:none;border:0;color:var(--muted);font-size:15px;cursor:pointer;padding:4px;line-height:1;z-index:1}
+  .outnow .on-x{position:absolute;top:2px;right:2px;background:none;border:0;color:var(--muted);font-size:17px;cursor:pointer;padding:9px;line-height:1;z-index:2}
   .outnow .on-x:hover{color:var(--ink)}
   @media(max-width:720px){.outnow{display:none}}
 
@@ -171,16 +186,17 @@
   }
 </style>
 
-<nav class="nav">
+<nav class="nav" aria-label="Artist">
   <div class="switch" role="tablist" aria-label="Choose artist">
-    <button class="sw" role="tab" data-artist="s333xgod" aria-selected="false">S333XGOD</button>
-    <button class="sw" role="tab" data-artist="mazze" aria-selected="false">MAZZE</button>
+    <button class="sw" role="tab" id="tab-s333xgod" data-artist="s333xgod" aria-controls="panel-s333xgod" aria-selected="false" tabindex="-1">S333XGOD</button>
+    <button class="sw" role="tab" id="tab-mazze" data-artist="mazze" aria-controls="panel-mazze" aria-selected="false" tabindex="-1">MAZZE</button>
   </div>
   <a class="pill" id="listen-link" href="#links-s333xgod">Listen</a>
 </nav>
 
-<div class="world" data-artist="s333xgod">
-<div class="rail" aria-label="S333XGOD streaming platforms">
+<main>
+<div class="world" data-artist="s333xgod" role="tabpanel" id="panel-s333xgod" aria-label="S333XGOD" tabindex="-1">
+<div class="rail" aria-label="Find S333XGOD">
     <a class="rail-btn rail-spotify" href="https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl" target="_blank" rel="noopener" aria-label="S333XGOD on Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></a>
     <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/s333xgod/1694914218" target="_blank" rel="noopener" aria-label="S333XGOD on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
     <a class="rail-btn rail-soundcloud" href="https://soundcloud.com/s333xgod" target="_blank" rel="noopener" aria-label="S333XGOD on SoundCloud"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c.014.06.045.098.09.098.057 0 .091-.037.105-.098l.194-1.308-.194-1.332c-.014-.057-.05-.094-.09-.094m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.104.119.104.061 0 .105-.045.121-.104l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.077.075.138.149.138.075 0 .135-.061.15-.15l.24-2.532-.24-2.623c0-.075-.06-.135-.135-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c0 .09.075.157.159.157.074 0 .148-.068.148-.158l.227-2.563-.227-2.444.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957.187 2.563c0 .09.08.164.18.164.094 0 .174-.09.18-.18l.209-2.563-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914c-.105 0-.195.09-.203.194l-.18 4.872.165 2.548c0 .12.09.209.195.209.104 0 .194-.089.21-.209l.193-2.548-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275.165 2.52c.014.119.104.225.225.225.119 0 .225-.105.225-.225l.195-2.52-.196-5.275c0-.12-.105-.225-.225-.225m1.245.045c0-.135-.105-.24-.24-.24-.119 0-.24.105-.24.24l-.149 5.441.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503-.164-5.456-.016.015zm.749-.134c-.135 0-.255.119-.255.254l-.15 5.322.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474-.165-5.307c0-.148-.115-.253-.25-.253m1.005.166c-.164 0-.284.135-.284.285l-.103 5.143.135 2.474c0 .149.119.277.284.277.149 0 .271-.128.284-.284l.121-2.443-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.104 6.048.115 2.449v.008c.008.06.03.135.074.18.06.075.15.12.24.12.074 0 .149-.03.195-.09.06-.052.09-.127.09-.21l.015-.24.117-2.203-.135-6.086c0-.104-.061-.193-.135-.239l.007-.053zm1.006-.547c-.045-.045-.09-.061-.15-.061-.074 0-.149.016-.209.061-.075.061-.119.15-.119.24v.029l-.137 6.609.076 1.215.061 1.185c0 .164.148.314.328.314.181 0 .33-.15.33-.329l.15-2.414-.15-6.637c0-.12-.074-.221-.165-.277l-.015.065zm8.934 3.777c-.405 0-.795.086-1.139.232-.24-2.654-2.46-4.736-5.188-4.736-.659 0-1.305.135-1.889.359-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/></svg></a>
@@ -191,11 +207,11 @@
 </div>
 
 <header class="hero">
-  <img class="hero-photo" src="bg-s333xgod.jpg" style="object-position:center 62%;" alt="" aria-hidden="true">
+  <img class="hero-photo" src="bg-s333xgod.jpg" style="object-position:center 62%;" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async">
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="emblem" src="emblem-s333xgod.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="60">
+    <img class="emblem" src="emblem-s333xgod.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="60" loading="eager" decoding="async">
     <p class="hero-out">Out now &mdash; <b>HIGHS &amp; LOWS</b></p>
     <h1>S333XGOD</h1>
     <div class="cta-row">
@@ -212,7 +228,7 @@
       <p class="eyebrow">Latest release</p>
       <h2 class="latest-title">HIGHS &amp; LOWS</h2>
       <p class="meta"><b>EP</b> &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; 4 tracks</p>
-      <p class="everywhere">Out now, everywhere.</p>
+      <p class="everywhere">Available everywhere.</p>
       <div class="cta-row" style="justify-content:flex-start">
         <a class="btn btn-solid" href="https://open.spotify.com/album/35phdmUKBinvz3N2VM6pNi" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Spotify</a>
         <a class="btn btn-ghost" style="background:none" href="https://music.apple.com/us/album/highs-lows-ep/6800418853" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
@@ -340,14 +356,16 @@
 <section style="padding-top:0" id="contact-s333xgod">
   <div class="wrap">
     <div class="sec-head"><h2>Contact</h2></div>
-    <p class="contact-lede">Booking, press &amp; inquiries</p>
+    <p class="contact-lede">Booking &amp; press inquiries</p>
     <a class="contact-mail" href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a>
   </div>
 </section>
 
 <footer class="site-foot">
-  <img src="emblem-s333xgod.png" alt="" loading="lazy">
-  <div>&copy; 2026 S333XGOD. All rights reserved.</div>
+  <div class="wrap">
+    <img src="emblem-s333xgod.png" alt="" loading="lazy">
+    <div>&copy; 2026 S333XGOD. All rights reserved.</div>
+  </div>
 </footer>
 
 <div class="outnow">
@@ -361,8 +379,8 @@
   <button class="on-x" aria-label="Dismiss">&times;</button>
 </div>
 </div>
-<div class="world" data-artist="mazze">
-<div class="rail" aria-label="MAZZE streaming platforms">
+<div class="world" data-artist="mazze" hidden role="tabpanel" id="panel-mazze" aria-label="MAZZE" tabindex="-1">
+<div class="rail" aria-label="Find MAZZE">
     <a class="rail-btn rail-spotify" href="https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh" target="_blank" rel="noopener" aria-label="Mazze on Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></a>
     <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/mazze/1378716604" target="_blank" rel="noopener" aria-label="Mazze on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
     <a class="rail-btn rail-soundcloud" href="https://soundcloud.com/mmazzeo" target="_blank" rel="noopener" aria-label="Mazze on SoundCloud"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c.014.06.045.098.09.098.057 0 .091-.037.105-.098l.194-1.308-.194-1.332c-.014-.057-.05-.094-.09-.094m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563.225 2.458c0 .06.045.104.119.104.061 0 .105-.045.121-.104l.254-2.474-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64.21 2.544c.016.077.075.138.149.138.075 0 .135-.061.15-.15l.24-2.532-.24-2.623c0-.075-.06-.135-.135-.135m1.155.36c-.005-.09-.075-.149-.159-.149-.09 0-.158.06-.164.149l-.217 2.43.2 2.563c0 .09.075.157.159.157.074 0 .148-.068.148-.158l.227-2.563-.227-2.444.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957.187 2.563c0 .09.08.164.18.164.094 0 .174-.09.18-.18l.209-2.563-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914c-.105 0-.195.09-.203.194l-.18 4.872.165 2.548c0 .12.09.209.195.209.104 0 .194-.089.21-.209l.193-2.548-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275.165 2.52c.014.119.104.225.225.225.119 0 .225-.105.225-.225l.195-2.52-.196-5.275c0-.12-.105-.225-.225-.225m1.245.045c0-.135-.105-.24-.24-.24-.119 0-.24.105-.24.24l-.149 5.441.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503-.164-5.456-.016.015zm.749-.134c-.135 0-.255.119-.255.254l-.15 5.322.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474-.165-5.307c0-.148-.115-.253-.25-.253m1.005.166c-.164 0-.284.135-.284.285l-.103 5.143.135 2.474c0 .149.119.277.284.277.149 0 .271-.128.284-.284l.121-2.443-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945c-.045-.029-.105-.044-.165-.044s-.119.015-.165.044c-.09.054-.149.15-.149.255v.061l-.104 6.048.115 2.449v.008c.008.06.03.135.074.18.06.075.15.12.24.12.074 0 .149-.03.195-.09.06-.052.09-.127.09-.21l.015-.24.117-2.203-.135-6.086c0-.104-.061-.193-.135-.239l.007-.053zm1.006-.547c-.045-.045-.09-.061-.15-.061-.074 0-.149.016-.209.061-.075.061-.119.15-.119.24v.029l-.137 6.609.076 1.215.061 1.185c0 .164.148.314.328.314.181 0 .33-.15.33-.329l.15-2.414-.15-6.637c0-.12-.074-.221-.165-.277l-.015.065zm8.934 3.777c-.405 0-.795.086-1.139.232-.24-2.654-2.46-4.736-5.188-4.736-.659 0-1.305.135-1.889.359-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/></svg></a>
@@ -372,11 +390,11 @@
 </div>
 
 <header class="hero">
-  <img class="hero-photo" src="bg-mazze-hd.jpg" style="object-position:64% 22%;filter:brightness(.78) contrast(1.12) saturate(1.08);" alt="" aria-hidden="true">
+  <img class="hero-photo" src="bg-mazze-hd.jpg" style="object-position:64% 22%;filter:brightness(.78) contrast(1.12) saturate(1.08);" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" decoding="async">
   <div class="hero-veil" aria-hidden="true" style="background:linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.14) 24%, rgba(0,0,0,.28) 46%, color-mix(in srgb,#070806 82%,transparent) 76%, #070806 100%), radial-gradient(130% 100% at 50% 28%, transparent 50%, rgba(0,0,0,.5) 100%)"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="emblem" src="emblem-mazze.png" alt="Hand-drawn skull and crossbones with 333 on the forehead, the Mazze emblem" width="79">
+    <img class="emblem" src="emblem-mazze.png" alt="Hand-drawn skull and crossbones with 333 on the forehead, the Mazze emblem" width="79" loading="lazy" decoding="async">
     <p class="hero-out">Out now &mdash; <b>DISIMULA</b></p>
     <h1>MAZZE</h1>
     <div class="cta-row">
@@ -393,7 +411,7 @@
       <p class="eyebrow">Latest release</p>
       <h2 class="latest-title">DISIMULA</h2>
       <p class="meta"><b>Single</b> &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; 2 tracks</p>
-      <p class="everywhere">Out now, everywhere.</p>
+      <p class="everywhere">Available everywhere.</p>
       <div class="cta-row" style="justify-content:flex-start">
         <a class="btn btn-solid" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Spotify</a>
         <a class="btn btn-ghost" style="background:none" href="https://music.apple.com/us/album/disimula-single/6784050950" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
@@ -432,7 +450,7 @@
       </a>
       <a class="card" href="https://music.apple.com/us/album/bebe-rica-single/1844205763" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/bebe-rica.jpg" alt="BeBe Rica cover art" width="600" height="600" loading="lazy"></div>
-        <div class="card-cap"><span class="card-name">BeBe Rica</span><span class="card-year">2025</span></div>
+        <div class="card-cap"><span class="card-name">BeBe Rica <span class="card-feat">with Santorino</span></span><span class="card-year">2025</span></div>
       </a>
       <a class="card" href="https://music.apple.com/us/album/animal-print-feat-santorino-single/1788942346" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/animal-print.jpg" alt="Animal Print cover art" width="600" height="600" loading="lazy"></div>
@@ -472,7 +490,7 @@
       </a>
       <a class="card" href="https://music.apple.com/us/album/la-amiga-single/1476353489" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/la-amiga.jpg" alt="La Amiga cover art" width="600" height="600" loading="lazy"></div>
-        <div class="card-cap"><span class="card-name">La Amiga</span><span class="card-year">2019</span></div>
+        <div class="card-cap"><span class="card-name">La Amiga <span class="card-feat">with Mario Puglia</span></span><span class="card-year">2019</span></div>
       </a>
       <a class="card" href="https://music.apple.com/us/album/sensata-single/1468854261" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/sensata.jpg" alt="SenSata cover art" width="600" height="600" loading="lazy"></div>
@@ -480,7 +498,7 @@
       </a>
       <a class="card" href="https://music.apple.com/us/album/blown-up-single/1454569664" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/blown-up.jpg" alt="Blown Up cover art" width="600" height="600" loading="lazy"></div>
-        <div class="card-cap"><span class="card-name">Blown Up</span><span class="card-year">2019</span></div>
+        <div class="card-cap"><span class="card-name">Blown Up <span class="card-feat">with Headpach</span></span><span class="card-year">2019</span></div>
       </a>
       <a class="card" href="https://music.apple.com/us/album/besarte-feat-santorino-single/1436750454" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/besarte.jpg" alt="Besarte cover art" width="600" height="600" loading="lazy"></div>
@@ -496,7 +514,7 @@
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><h2>With S333XGOD</h2><span class="eyebrow">9 tracks</span></div>
+    <div class="sec-head"><h2>With S333XGOD</h2><span class="eyebrow">9 releases</span></div>
     <div class="strip">
       <a class="card" href="https://music.apple.com/us/album/miss-your-touch-feat-mazze-single/1837920015" target="_blank" rel="noopener">
         <div class="card-art"><img src="art/miss-your-touch.jpg" alt="MiSS YoUR TOucH cover art" width="600" height="600" loading="lazy"></div>
@@ -588,14 +606,16 @@
 <section style="padding-top:0" id="contact-mazze">
   <div class="wrap">
     <div class="sec-head"><h2>Contact</h2></div>
-    <p class="contact-lede">Booking, press &amp; inquiries</p>
+    <p class="contact-lede">Booking &amp; press inquiries</p>
     <a class="contact-mail" href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a>
   </div>
 </section>
 
 <footer class="site-foot">
-  <img src="emblem-mazze.png" alt="" loading="lazy">
-  <div>&copy; 2026 MAZZE. All rights reserved.</div>
+  <div class="wrap">
+    <img src="emblem-mazze.png" alt="" loading="lazy">
+    <div>&copy; 2026 MAZZE. All rights reserved.</div>
+  </div>
 </footer>
 
 <div class="outnow">
@@ -609,34 +629,53 @@
   <button class="on-x" aria-label="Dismiss">&times;</button>
 </div>
 </div>
+</main>
 
 <script>
   (function(){
-    var DEFAULT=(location.hash==='#mazze')?'mazze':(location.hash==='#s333xgod')?'s333xgod':"s333xgod";
+    var hash=location.hash.slice(1);
+    var DEFAULT=/mazze/.test(hash)?'mazze':/s333xgod/.test(hash)?'s333xgod':"s333xgod";
     var worlds=document.querySelectorAll('.world');
-    var tabs=document.querySelectorAll('.sw');
+    var tabs=Array.prototype.slice.call(document.querySelectorAll('.sw'));
     var listen=document.getElementById('listen-link');
+    function themeColor(key){
+      var m=document.querySelector('meta[name="theme-color"]');
+      if(!m){m=document.createElement('meta');m.name='theme-color';if(document.head)document.head.appendChild(m);}
+      m.setAttribute('content',key==='mazze'?'#070806':'#060708');
+    }
     function setArtist(key){
       document.body.dataset.artist=key;
-      worlds.forEach(function(w){w.hidden=w.dataset.artist!==key});
-      tabs.forEach(function(t){t.setAttribute('aria-selected',String(t.dataset.artist===key))});
+      worlds.forEach(function(w){w.hidden=w.dataset.artist!==key;});
+      tabs.forEach(function(t){var on=t.dataset.artist===key;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;});
       listen.setAttribute('href','#links-'+key);
       document.title=key==='mazze'?'MAZZE':'S333XGOD';
+      themeColor(key);
     }
-    tabs.forEach(function(t){t.addEventListener('click',function(){
-      if(document.body.dataset.artist!==t.dataset.artist){setArtist(t.dataset.artist);window.scrollTo({top:0,behavior:'auto'});
-        try{history.replaceState(null,'',location.pathname+(t.dataset.artist==='mazze'?'#mazze':''))}catch(e){}}
-    })});
+    function go(key,focus){
+      if(document.body.dataset.artist===key)return;
+      setArtist(key);
+      window.scrollTo(0,0);
+      if(focus){var t=document.getElementById('tab-'+key);if(t)t.focus();}
+      try{history.replaceState(null,'',location.pathname+(key==='mazze'?'#mazze':''));}catch(e){}
+    }
+    tabs.forEach(function(t){
+      t.addEventListener('click',function(){go(t.dataset.artist,false);});
+      t.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();
+          var other=tabs[(tabs.indexOf(t)+1)%tabs.length];go(other.dataset.artist,true);}
+      });
+    });
     setArtist(DEFAULT);
+    if(hash){var el=document.getElementById(hash);if(el)requestAnimationFrame(function(){el.scrollIntoView();});}
     var nav=document.querySelector('.nav');
-    function onScroll(){nav.classList.toggle('scrolled',window.scrollY>36)}
+    function onScroll(){nav.classList.toggle('scrolled',window.scrollY>36);}
     window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
     document.querySelectorAll('.outnow').forEach(function(card){
-      var closed=false; try{closed=sessionStorage.getItem('outnow-closed')==='1'}catch(e){}
+      var closed=false; try{closed=sessionStorage.getItem('outnow-closed')==='1';}catch(e){}
       if(closed) card.classList.add('dismissed');
       card.querySelector('.on-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
-        document.querySelectorAll('.outnow').forEach(function(c){c.classList.add('dismissed')});
-        try{sessionStorage.setItem('outnow-closed','1')}catch(e){}});
+        document.querySelectorAll('.outnow').forEach(function(c){c.classList.add('dismissed');});
+        try{sessionStorage.setItem('outnow-closed','1');}catch(e){}});
     });
   })();
 </script>
