@@ -18,7 +18,7 @@
 <style>
   body[data-artist="s333xgod"]{--bg:#060708;--panel:#10141a;--muted:#8a919b;--accent:#3fd8ea;--glow:rgba(63,216,234,.3);--hairline:rgba(195,205,214,.16)}
   body[data-artist="mazze"]{--bg:#070806;--panel:#111410;--muted:#8b9287;--accent:#79e14a;--glow:rgba(121,225,74,.28);--hairline:rgba(198,206,195,.16)}
-  :root{--ink:#e9edf1;--silver:#c3cdd6;--anton:'Anton',Impact,'Arial Narrow',sans-serif}
+  :root{--ink:#e9edf1;--silver:#c3cdd6;--anton:'Anton',Impact,'Arial Narrow',sans-serif;--grain:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'180'%20height%3D'180'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.85'%20numOctaves%3D'2'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20type%3D'saturate'%20values%3D'0'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'180'%20height%3D'180'%20filter%3D'url(%23n)'%20opacity%3D'0.4'%2F%3E%3C%2Fsvg%3E")}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
@@ -33,37 +33,47 @@
 
   /* ---------- nav + artist switch ---------- */
   .nav{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;
-    padding:12px 18px;background:color-mix(in srgb,var(--bg) 72%,transparent);
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hairline)}
-  .switch{display:flex;border:1px solid var(--hairline);border-radius:999px;padding:4px;gap:4px;background:rgba(0,0,0,.3)}
-  .sw{font-family:var(--anton);font-weight:400;font-size:14px;letter-spacing:.08em;
-    background:none;border:0;color:var(--muted);border-radius:999px;padding:8px 16px;cursor:pointer;transition:color .2s,background .2s}
-  .sw[aria-selected="true"]{background:#fff;color:#0a0a0c}
-  .sw:not([aria-selected="true"]):hover{color:var(--ink)}
+    padding:18px 22px;background:transparent;border-bottom:1px solid transparent;
+    transition:background .35s,border-color .35s,padding .35s}
+  .nav.scrolled{padding:12px 22px;background:color-mix(in srgb,var(--bg) 80%,transparent);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--hairline)}
+  .switch{display:flex;gap:24px}
+  .sw{font-family:var(--anton);font-weight:400;font-size:15px;letter-spacing:.1em;
+    background:none;border:0;color:rgba(255,255,255,.4);padding:6px 2px;cursor:pointer;position:relative;transition:color .25s}
+  .sw::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);
+    transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+  .sw[aria-selected="true"]{color:#fff}
+  .sw[aria-selected="true"]::after{transform:scaleX(1)}
+  .sw:not([aria-selected="true"]):hover{color:var(--silver)}
   .nav .pill{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
     border:1px solid var(--hairline);border-radius:999px;padding:8px 16px;transition:border-color .2s,color .2s;white-space:nowrap}
   .nav .pill:hover{border-color:var(--accent);color:var(--accent)}
   @media(max-width:430px){.sw{padding:8px 11px;font-size:12.5px}.nav .pill{padding:8px 12px;letter-spacing:.12em}}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:92svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .hero{position:relative;min-height:94svh;display:block;overflow:hidden}
   .hero-collage{position:absolute;inset:-3%;display:grid;grid-template-columns:repeat(6,1fr);align-content:start;gap:6px;z-index:0;
     filter:brightness(.42) saturate(1.15);animation:drift 46s ease-in-out infinite alternate}
   .hero-collage img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
   @media(max-width:700px){.hero-collage{grid-template-columns:repeat(3,1fr)}}
   .hero-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 35%;z-index:0;
-    filter:brightness(.62) saturate(1.05);animation:drift 46s ease-in-out infinite alternate}
+    filter:brightness(.82) contrast(1.04) saturate(1.02);animation:drift 46s ease-in-out infinite alternate}
   @keyframes drift{from{transform:scale(1)}to{transform:scale(1.07)}}
   .hero-veil{position:absolute;inset:0;z-index:1;background:
-    radial-gradient(90% 65% at 50% 42%, rgba(0,0,0,.42), rgba(0,0,0,.66) 70%),
-    linear-gradient(180deg, color-mix(in srgb,var(--bg) 55%,transparent) 0%, transparent 22%, transparent 62%, var(--bg) 98%)}
-  .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
-    padding:120px 22px 90px;width:100%}
-  .hero-inner img.emblem{max-width:44vw;height:auto;filter:drop-shadow(0 10px 44px var(--glow))}
-  h1{font-family:var(--anton);font-weight:400;margin:0;color:#fff;
-    font-size:clamp(64px,16vw,190px);line-height:1.02;letter-spacing:.02em;text-wrap:balance;
-    text-shadow:0 4px 60px rgba(0,0,0,.55)}
-  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:10px}
+    linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.06) 26%, rgba(0,0,0,.1) 50%, color-mix(in srgb,var(--bg) 82%,transparent) 86%, var(--bg) 100%),
+    radial-gradient(130% 100% at 50% 30%, transparent 55%, rgba(0,0,0,.42) 100%)}
+  .hero-grain{position:absolute;inset:0;z-index:1;opacity:.45;mix-blend-mode:overlay;pointer-events:none;
+    background-image:var(--grain);background-size:180px 180px}
+  .hero-inner{position:relative;z-index:2;min-height:94svh;max-width:1060px;margin:0 auto;
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;gap:14px;
+    padding:130px 22px 76px;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero-inner img.emblem{height:auto;filter:drop-shadow(0 6px 26px var(--glow));margin-bottom:2px}
+  .hero-out b{color:var(--accent);font-weight:700}
+  h1{font-family:var(--anton);font-weight:400;margin:0 0 0 -3px;color:#fff;
+    font-size:clamp(68px,15vw,200px);line-height:.98;letter-spacing:.01em;
+    text-shadow:0 6px 70px rgba(0,0,0,.6)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;margin-top:14px}
   .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 28px;
     font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:transform .15s,border-color .2s,color .2s,background .2s}
   .btn:active{transform:scale(.97)}
@@ -71,22 +81,22 @@
   .btn-solid:hover{background:var(--accent);color:#050607}
   .btn-ghost{border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(0,0,0,.25);backdrop-filter:blur(6px)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .hero-out{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin:0}
+  .hero-out{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--silver);margin:0}
 
   /* ---------- floating icon rail ---------- */
-  .rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:38;display:flex;flex-direction:column;gap:10px}
-  .rail-btn{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;
-    box-shadow:0 6px 18px rgba(0,0,0,.5);transition:transform .15s}
-  .rail-btn:hover{transform:scale(1.12)}
-  .rail-btn svg{width:20px;height:20px}
-  .rail-spotify{background:#1db954}
-  .rail-apple{background:linear-gradient(135deg,#fb5c74,#fa233b)}
-  .rail-soundcloud{background:#f50}
-  .rail-youtube{background:#f00}
-  .rail-x{background:#000;border:1px solid rgba(255,255,255,.28)}
-  .rail-genius{background:#ffff64}
-  .rail-btn.rail-genius,.ico.rail-genius{color:#111}
-  .rail-instagram{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+  .rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:38;display:flex;flex-direction:column;gap:9px}
+  .rail-btn,.plink .ico{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    color:var(--silver);background:rgba(255,255,255,.04);border:1px solid var(--hairline);
+    backdrop-filter:blur(8px);transition:transform .15s,background .2s,color .2s,border-color .2s}
+  .rail-btn:hover{transform:scale(1.1)}
+  .rail-btn svg{width:19px;height:19px}
+  .rail-spotify:hover,.plink:hover .rail-spotify{background:#1db954;color:#fff;border-color:transparent}
+  .rail-apple:hover,.plink:hover .rail-apple{background:linear-gradient(135deg,#fb5c74,#fa233b);color:#fff;border-color:transparent}
+  .rail-soundcloud:hover,.plink:hover .rail-soundcloud{background:#f50;color:#fff;border-color:transparent}
+  .rail-youtube:hover,.plink:hover .rail-youtube{background:#f00;color:#fff;border-color:transparent}
+  .rail-x:hover,.plink:hover .rail-x{background:#000;color:#fff;border-color:rgba(255,255,255,.4)}
+  .rail-genius:hover,.plink:hover .rail-genius{background:#ffff64;color:#111;border-color:transparent}
+  .rail-instagram:hover,.plink:hover .rail-instagram{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;border-color:transparent}
   @media(max-width:980px){.rail{display:none}}
 
   /* ---------- sections ---------- */
@@ -96,8 +106,8 @@
   .sec-head .eyebrow{white-space:nowrap}
 
   .latest{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:52px;align-items:center}
-  .latest-art{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1px solid var(--hairline);
-    box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 90px var(--glow)}
+  .latest-art{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover;
+    box-shadow:0 34px 90px rgba(0,0,0,.6)}
   .latest-info{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
   .latest-info .meta{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .latest-info .meta b{color:var(--accent);font-weight:700}
@@ -107,9 +117,9 @@
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:30px 26px}
   .card{display:flex;flex-direction:column;gap:12px;min-width:0}
-  .card-art{overflow:hidden;border:1px solid var(--hairline);transition:border-color .25s}
+  .card-art{overflow:hidden;transition:outline-color .25s;outline:1px solid transparent;outline-offset:-1px}
   .card-art img{aspect-ratio:1;width:100%;height:auto;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-  .card:hover .card-art{border-color:var(--accent)}
+  .card:hover .card-art{outline-color:var(--accent)}
   .card:hover .card-art img{transform:scale(1.045)}
   .card-cap{display:flex;justify-content:space-between;gap:14px;align-items:baseline;min-width:0}
   .card-name{font-weight:600;font-size:15px;letter-spacing:.02em;overflow-wrap:anywhere}
@@ -123,7 +133,7 @@
 
   .plinks{border-top:1px solid var(--hairline)}
   .plink{display:flex;align-items:center;gap:20px;padding-block:22px;border-bottom:1px solid var(--hairline)}
-  .plink .ico{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+  .plink .ico{flex-shrink:0}
   .plink .ico svg{width:18px;height:18px}
   .plink .pname{font-family:var(--anton);font-weight:400;font-size:clamp(20px,4vw,32px);letter-spacing:.03em;transition:color .2s;min-width:0;overflow-wrap:anywhere}
   .plink .ptype{margin-left:auto;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
@@ -177,13 +187,14 @@
 <header class="hero">
   <img class="hero-photo" src="bg-s333xgod.jpg" style="object-position:center 62%" alt="" aria-hidden="true">
   <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="emblem" src="emblem-s333xgod.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="120" loading="lazy">
+    <img class="emblem" src="emblem-s333xgod.png" alt="Hand-drawn six-point star, the S333XGOD emblem" width="60">
+    <p class="hero-out">Out now &mdash; <b>HIGHS &amp; LOWS</b></p>
     <h1>S333XGOD</h1>
-    <p class="hero-out">HIGHS &amp; LOWS &mdash; out now</p>
     <div class="cta-row">
       <a class="btn btn-solid" href="https://open.spotify.com/album/35phdmUKBinvz3N2VM6pNi" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Play on Spotify</a>
-      <a class="btn btn-ghost" href="https://music.apple.com/us/album/highs-lows-ep/6800418853" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
+      <a class="btn btn-ghost" href="#links-s333xgod">All platforms</a>
     </div>
   </div>
 </header>
@@ -349,13 +360,14 @@
 <header class="hero">
   <img class="hero-photo" src="bg-mazze.jpg" alt="" aria-hidden="true">
   <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="emblem" src="emblem-mazze.png" alt="Hand-drawn skull and crossbones with 333 on the forehead, the Mazze emblem" width="158" loading="lazy">
+    <img class="emblem" src="emblem-mazze.png" alt="Hand-drawn skull and crossbones with 333 on the forehead, the Mazze emblem" width="79">
+    <p class="hero-out">Out now &mdash; <b>DISIMULA</b></p>
     <h1>MAZZE</h1>
-    <p class="hero-out">DISIMULA &mdash; out now</p>
     <div class="cta-row">
       <a class="btn btn-solid" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Play on Spotify</a>
-      <a class="btn btn-ghost" href="https://music.apple.com/us/album/disimula-single/6784050950" target="_blank" rel="noopener">Apple Music &#8599;&#xFE0E;</a>
+      <a class="btn btn-ghost" href="#links-mazze">All platforms</a>
     </div>
   </div>
 </header>
@@ -594,6 +606,9 @@
         try{history.replaceState(null,'',location.pathname+(t.dataset.artist==='mazze'?'#mazze':''))}catch(e){}}
     })});
     setArtist(DEFAULT);
+    var nav=document.querySelector('.nav');
+    function onScroll(){nav.classList.toggle('scrolled',window.scrollY>36)}
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
     document.querySelectorAll('.outnow').forEach(function(card){
       var closed=false; try{closed=sessionStorage.getItem('outnow-closed')==='1'}catch(e){}
       if(closed) card.classList.add('dismissed');
