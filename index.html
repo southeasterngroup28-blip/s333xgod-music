@@ -88,6 +88,19 @@
   .btn-ghost{border:1px solid rgba(255,255,255,.34);color:#fff;background:rgba(0,0,0,.25);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
   .hero-out{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--silver);margin:0}
+  .signup{margin-top:24px;width:100%;max-width:440px}
+  .signup-label{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver);margin-bottom:10px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .signup-row{display:flex;gap:8px}
+  .signup input{flex:1;min-width:0;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.3);border-radius:999px;
+    padding:13px 18px;color:#fff;font-size:14px;font-family:inherit;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .signup input::placeholder{color:rgba(255,255,255,.52)}
+  .signup input:focus{outline:none;border-color:var(--accent)}
+  .signup button{flex-shrink:0;background:var(--accent);color:#06110b;border:0;border-radius:999px;
+    padding:13px 24px;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .15s,filter .2s}
+  .signup button:hover{filter:brightness(1.08)}
+  .signup button:active{transform:scale(.96)}
+  .signup-msg{margin:11px 2px 0;font-size:13px;font-weight:600;color:var(--accent);text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .signup.done .signup-row{display:none}
 
   /* ---------- floating icon rail ---------- */
   .rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:38;display:flex;flex-direction:column;gap:9px}
@@ -239,6 +252,14 @@
       <a class="btn btn-solid" href="https://open.spotify.com/album/35phdmUKBinvz3N2VM6pNi" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Play on Spotify</a>
       <a class="btn btn-ghost" href="#links-s333xgod">All platforms</a>
     </div>
+    <form class="signup" data-artist="s333xgod" novalidate>
+      <label class="signup-label" for="email-s333xgod">Stay up to date &mdash; new drops &amp; shows</label>
+      <div class="signup-row">
+        <input id="email-s333xgod" name="email" type="email" autocomplete="email" required placeholder="Email address">
+        <button type="submit">Join</button>
+      </div>
+      <p class="signup-msg" role="status" hidden></p>
+    </form>
   </div>
 </header>
 
@@ -442,6 +463,14 @@
       <a class="btn btn-solid" href="https://open.spotify.com/album/05NBMrpzIPdlZCcjLd2zS3" target="_blank" rel="noopener">&#9654;&#xFE0E;&nbsp; Play on Spotify</a>
       <a class="btn btn-ghost" href="#links-mazze">All platforms</a>
     </div>
+    <form class="signup" data-artist="mazze" novalidate>
+      <label class="signup-label" for="email-mazze">Stay up to date &mdash; new drops &amp; shows</label>
+      <div class="signup-row">
+        <input id="email-mazze" name="email" type="email" autocomplete="email" required placeholder="Email address">
+        <button type="submit">Join</button>
+      </div>
+      <p class="signup-msg" role="status" hidden></p>
+    </form>
   </div>
 </header>
 
@@ -748,6 +777,23 @@
     });
     setArtist(DEFAULT);
     if(hash){var el=document.getElementById(hash);if(el)requestAnimationFrame(function(){el.scrollIntoView();});}
+    var SIGNUP_ENDPOINT="https://nxvxfpuwlkfwyvmuqjge.supabase.co/functions/v1/subscribe";
+    document.querySelectorAll('.signup').forEach(function(f){
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var input=f.querySelector('input'), msg=f.querySelector('.signup-msg'), btn=f.querySelector('button');
+        var email=(input.value||'').trim();
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.hidden=false;msg.style.color='#ff6b6b';msg.textContent='Please enter a valid email.';return;}
+        btn.disabled=true;msg.hidden=false;msg.style.color='';msg.textContent='Joining\u2026';
+        fetch(SIGNUP_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+          .then(function(r){return r.json().catch(function(){return{};});})
+          .then(function(d){
+            if(d&&d.ok){f.classList.add('done');msg.style.color='';msg.textContent='Thanks \u2014 you\u2019re on the list.';}
+            else{btn.disabled=false;msg.style.color='#ff6b6b';msg.textContent='Something went wrong \u2014 try again.';}
+          })
+          .catch(function(){btn.disabled=false;msg.style.color='#ff6b6b';msg.textContent='Something went wrong \u2014 try again.';});
+      });
+    });
     var nav=document.querySelector('.nav');
     function onScroll(){nav.classList.toggle('scrolled',window.scrollY>36);}
     window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
