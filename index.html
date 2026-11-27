@@ -21,12 +21,12 @@ gtag('config', 'G-PVHN0BBXC4');
 <meta property="og:url" content="https://slimemusic.online/">
 <meta property="og:image" content="https://slimemusic.online/art/slime-time.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#070806">
+<meta name="theme-color" content="#070708">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"S333XGOD","url":"https://slimemusic.online/","sameAs":["https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl","https://music.apple.com/us/artist/s333xgod/1694914218","https://soundcloud.com/s333xgod","https://www.youtube.com/channel/UCTZlvjEmjxjprBtlcSNA5uw","https://www.instagram.com/s333xgod","https://x.com/s333xgod","https://discord.gg/ycGJku7R2V","https://genius.com/artists/S333xgod"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"MAZZE","url":"https://slimemusic.online/#mazze","sameAs":["https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh","https://music.apple.com/us/artist/mazze/1378716604","https://soundcloud.com/mmazzeo","https://www.youtube.com/@elmazze","https://www.instagram.com/elmazze","https://x.com/s333xgod","https://discord.gg/ycGJku7R2V","https://genius.com/artists/Mazze-usa"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="bg-s333xgod-2.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="merch/hero.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap">
 <style>
   /* s333xgod is the default palette on :root so themed vars resolve before JS runs (no white flash) */
@@ -238,18 +238,158 @@ gtag('config', 'G-PVHN0BBXC4');
     *{transition:none!important;animation:none!important}
     html{scroll-behavior:auto}
   }
+  /* ==== MERCH CSS (start) ==== */
+  body[data-artist="merch"]{--bg:#070708;--panel:#0f1011;--muted:#8a918a;--accent:#a8f57e;--glow:rgba(168,245,126,.26);--hairline:rgba(198,206,195,.16)}
+
+  /* hero: the Aleta main frame. Landscape screens anchor the figure to the right edge so the title has the left;
+     portrait screens put the photo on top and the copy below it. */
+  .hero-merch .hero-photo{inset:0 auto 0 auto;right:calc(2vw - 36.6vh);width:auto;height:100%;aspect-ratio:16/9;object-position:center;transform-origin:60% 45%;
+    filter:brightness(1.06) contrast(1.05) saturate(1.1);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
+  .hero-merch .hero-veil{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 17%,rgba(0,0,0,0) 62%,color-mix(in srgb,var(--bg) 84%,transparent) 90%,var(--bg) 100%)}
+  .hero-merch h1{font-size:clamp(54px,9.8vw,180px)}
+  @media (max-aspect-ratio:5/6){
+    .hero-merch .hero-photo{inset:0 auto auto 0;left:calc(50% - 64.06vh);left:calc(50% - 64.06svh);width:auto;height:60.16vh;height:60.16svh;aspect-ratio:16/9;transform-origin:59.9% 45%;
+      -webkit-mask-image:linear-gradient(180deg,#000 58%,transparent 100%);mask-image:linear-gradient(180deg,#000 58%,transparent 100%)}
+    .hero-merch .hero-veil{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 40%,color-mix(in srgb,var(--bg) 62%,transparent) 58%,var(--bg) 66%)}
+    .hero-merch h1{font-size:clamp(54px,19vw,96px)}
+  }
+
+  /* shop: layout. Desktop = photo + details on the left, order builder on the right. Phone = photo, builder, details. */
+  .product{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"media info" "meta info";column-gap:54px;row-gap:24px;align-items:start}
+  .product-media{grid-area:media;position:relative;min-width:0}
+  .product-info{grid-area:info}
+  .product-meta{grid-area:meta}
+
+  /* shop: stage. Shows the flags in the current order (one, or two overlapped), or a video still. */
+  .product-stage{position:relative;aspect-ratio:3/2;overflow:hidden;border:1px solid var(--hairline);
+    background:radial-gradient(90% 80% at 50% 42%,#1b1e1c 0%,#0e0f10 58%,#090a0b 100%)}
+  .product-stage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.4;mix-blend-mode:overlay;background-image:var(--grain);background-size:180px 180px}
+  .product-stage img{position:absolute;max-width:none}
+  .stage-glow{inset:14% 9%;width:82%;height:72%;object-fit:contain;filter:blur(34px) saturate(1.7) brightness(1.1);opacity:.5;transform:scale(1.06);transition:opacity .25s ease}
+  .flagset .fs-a,.flagset .fs-b{position:absolute;max-width:none;object-fit:contain;left:7%;top:12%;width:86%;height:76%;
+    transition:left .5s cubic-bezier(.2,.7,.2,1),top .5s cubic-bezier(.2,.7,.2,1),width .5s cubic-bezier(.2,.7,.2,1),height .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1),opacity .2s ease}
+  .flagset .fs-b{opacity:0}
+  .flagset[data-qty="2"] .fs-a{left:4%;top:35%;width:66%;height:57%;transform:rotate(-3deg)}
+  .flagset[data-qty="2"] .fs-b{left:30%;top:8%;width:66%;height:57%;transform:rotate(3deg);opacity:1}
+  .product-stage .fs-a{filter:drop-shadow(0 22px 26px rgba(0,0,0,.7))}
+  .product-stage .fs-b{filter:brightness(.9) drop-shadow(0 18px 22px rgba(0,0,0,.6))}
+  .stage-photo{inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s ease}
+  .product-stage[data-mode="photo"] .stage-photo{opacity:1}
+  .product-stage[data-mode="photo"] .fs-a,.product-stage[data-mode="photo"] .fs-b,.product-stage[data-mode="photo"] .stage-glow{opacity:0}
+  .stage-cap{position:absolute;left:10px;bottom:10px;z-index:1;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;line-height:1.2;
+    color:#fff;background:rgba(0,0,0,.62);padding:7px 10px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .product-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+  .pthumb{display:block;width:100%;position:relative;aspect-ratio:3/2;padding:0;border:0;cursor:pointer;overflow:hidden;opacity:.62;transition:opacity .2s;
+    background:radial-gradient(90% 80% at 50% 42%,#1b1e1c 0%,#0e0f10 60%,#090a0b 100%)}
+  .pthumb:not(.flagset) img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
+  .pthumb::after{content:"";position:absolute;inset:0;border:1px solid var(--hairline);transition:border-color .2s;pointer-events:none}
+  .pthumb:hover,.pthumb[aria-current="true"]{opacity:1}
+  .pthumb[aria-current="true"]::after{border:2px solid var(--accent)}
+
+  /* shop: order builder */
+  .product-info{display:flex;flex-direction:column;gap:16px;align-items:flex-start;min-width:0}
+  .product-tag{color:var(--accent);margin:0}
+  .product-name{font-family:var(--anton);font-weight:400;font-size:clamp(38px,5.2vw,62px);line-height:1.02;letter-spacing:.02em;text-transform:uppercase;margin:0;color:var(--ink)}
+  .product-price{display:flex;align-items:baseline;gap:12px;font-family:var(--anton);font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.1;color:var(--ink);margin:0}
+  .product-price small{font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .product-ship{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--silver);margin:-6px 0 0;text-wrap:balance}
+  .product-desc{color:var(--silver);font-size:16px;line-height:1.6;margin:0;max-width:46ch}
+  .opt{display:flex;flex-direction:column;gap:10px;align-self:stretch}
+  .opt[hidden]{display:none}
+  .opt-label{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0}
+  .opt-label b{color:var(--ink);font-weight:700;margin-left:10px}
+  .opt-split{display:flex;justify-content:space-between;gap:12px;max-width:440px}
+  .opt-label em{font-style:normal;color:var(--accent)}
+  .qty{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:440px}
+  .qty-btn{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px 16px 13px;border:1px solid var(--hairline);border-radius:14px;background:transparent;
+    color:var(--silver);font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s,background .2s}
+  .qty-btn b{font-family:var(--anton);font-weight:400;font-size:21px;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+  .qty-btn>span{font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .qty-btn:hover{border-color:var(--silver)}
+  .qty-btn[aria-pressed="true"]{border-color:var(--accent);background:rgba(255,255,255,.07)}
+  .qty-btn[aria-pressed="true"]>span{color:var(--accent)}
+  .qty-btn:focus-visible{border-radius:14px}
+  .swatches{display:flex;flex-wrap:wrap;gap:10px}
+  .swatch{display:inline-flex;align-items:center;gap:10px;padding:7px 18px 7px 7px;border-radius:999px;border:1px solid var(--hairline);background:transparent;
+    color:var(--silver);font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+  .swatch i{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.24)}
+  .swatch:hover{border-color:var(--silver)}
+  .swatch[aria-pressed="true"]{border-color:var(--accent);color:var(--ink);background:rgba(255,255,255,.07)}
+  .swatch:focus-visible{border-radius:999px}
+  .shipto{position:relative;max-width:440px}
+  .shipto select{display:block;width:100%;-webkit-appearance:none;appearance:none;padding:13px 46px 13px 16px;border:1px solid var(--hairline);border-radius:14px;background:transparent;
+    color:var(--ink);color-scheme:dark;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.02em;line-height:1.3;text-overflow:ellipsis;cursor:pointer;transition:border-color .2s}
+  .shipto select option{background:#0f1011;color:#fff}
+  .shipto select:hover{border-color:var(--silver)}
+  .shipto select:focus-visible{border-radius:14px}
+  .shipto::after{content:"";position:absolute;right:19px;top:50%;width:8px;height:8px;margin-top:-7px;border-right:2px solid var(--silver);border-bottom:2px solid var(--silver);transform:rotate(45deg);pointer-events:none}
+  .product-buy{margin-top:6px;align-self:stretch;justify-content:center;padding-block:17px;max-width:440px}
+  .product-buy[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+  .product-sum{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--silver);margin:-4px 0 0}
+  .sum-total{color:var(--muted)}
+  .sum-total b{color:var(--ink);font-weight:700}
+  .product-policy{font-size:12px;color:var(--muted);margin:0;letter-spacing:.01em}
+  .product-policy a{color:var(--silver);text-decoration:underline;text-underline-offset:2px}
+  .product-policy b{color:var(--ink);font-weight:700}
+  .product-meta{list-style:none;padding:16px 0 0;margin:0;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--hairline)}
+  .product-meta li{font-size:13px;color:var(--muted);letter-spacing:.02em;padding-left:18px;position:relative}
+  .product-meta li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  @media(max-width:900px){.product{column-gap:34px}}
+  @media(max-width:700px){.product{grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:"media" "info" "meta";row-gap:26px}
+    .product-info{gap:14px}.product-buy,.qty,.shipto{max-width:none}.product-desc{order:5}.shipto select{font-size:16px}}
+
+  /* lookbook: stills from the Aleta video */
+  .seen{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:8/3}
+  .seen-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+  .seen>*,.seen-row>*{display:block;position:relative;overflow:hidden;min-width:0;min-height:0;background:#000}
+  .seen-row>*{aspect-ratio:16/9}
+  .seen>:first-child{grid-row:1/3}
+  .seen img,.seen-row img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .seen .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:auto;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.5));transition:transform .2s,opacity .2s;opacity:.92}
+  .seen .play-bg{fill:#212121;fill-opacity:.82}
+  @media (hover:hover){
+    .seen a:hover img{transform:scale(1.04)}
+    .seen a:hover .play{transform:translate(-50%,-50%) scale(1.08);opacity:1}
+    .seen a:hover .play-bg{fill:var(--accent);fill-opacity:1}
+  }
+  @media(max-width:700px){
+    .seen{grid-template-columns:1fr 1fr;grid-template-rows:auto;aspect-ratio:auto}
+    .seen>*{aspect-ratio:16/9}
+    .seen>:first-child{grid-column:1/-1;grid-row:auto}
+    .seen-row{grid-template-columns:1fr 1fr}
+    .seen-row>:last-child{grid-column:1/-1}
+  }
+
+  /* closing band */
+  .merch-band{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(96px,14vw,160px);text-align:center}
+  .merch-band>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;z-index:-2;filter:brightness(.55) saturate(1.1)}
+  .merch-band::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 38%,transparent) 34%,color-mix(in srgb,var(--bg) 38%,transparent) 66%,var(--bg) 100%)}
+  .band-title{font-family:var(--anton);font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:12px 0 14px;color:#fff;text-shadow:0 6px 50px rgba(0,0,0,.75)}
+  .band-sub{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 28px;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+  .band-sub i{font-style:normal}
+  @media(max-width:700px){.band-sub i{display:block;font-size:0;line-height:0}}
+
+  /* nav: three tabs plus the Preorder pill have to fit a phone */
+  @media(max-width:430px){.switch{gap:4px}.nav,.nav.scrolled{padding-inline:16px}.nav .pill{padding:8px 11px}}
+  /* ==== MERCH CSS (end) ==== */
 </style>
 
+<!-- The site opens on the MERCH tab: the markup below starts in that state, so nothing else flashes before the script runs -->
+<body data-artist="merch">
 <nav class="nav" aria-label="Artist">
   <div class="switch" role="tablist" aria-label="Choose artist">
     <button class="sw" role="tab" id="tab-s333xgod" data-artist="s333xgod" aria-controls="panel-s333xgod" aria-selected="false" tabindex="-1">S333XGOD</button>
     <button class="sw" role="tab" id="tab-mazze" data-artist="mazze" aria-controls="panel-mazze" aria-selected="false" tabindex="-1">MAZZE</button>
+    <button class="sw" role="tab" id="tab-merch" data-artist="merch" aria-controls="panel-merch" aria-selected="true" tabindex="0">MERCH</button>
   </div>
-  <a class="pill" id="listen-link" href="#links-s333xgod">Listen</a>
+  <a class="pill" id="listen-link" href="#merch-shop">Preorder</a>
 </nav>
 
 <main>
-<div class="world" data-artist="s333xgod" role="tabpanel" id="panel-s333xgod" aria-label="S333XGOD" tabindex="-1">
+<div class="world" data-artist="s333xgod" hidden role="tabpanel" id="panel-s333xgod" aria-label="S333XGOD" tabindex="-1">
 <div class="rail" aria-label="Find S333XGOD">
     <a class="rail-btn rail-spotify" href="https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl" target="_blank" rel="noopener" aria-label="S333XGOD on Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.57-1.05 8.5-.6 11.66 1.34.35.22.46.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.32 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.41C15.24 8.32 8.85 8.11 5.15 9.23a1.13 1.13 0 1 1-.65-2.15c4.25-1.29 11.3-1.04 15.72 1.58a1.13 1.13 0 0 1-1.15 1.96z"/></svg></a>
     <a class="rail-btn rail-apple" href="https://music.apple.com/us/artist/s333xgod/1694914218" target="_blank" rel="noopener" aria-label="S333XGOD on Apple Music"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.68.14c-.528-.09-1.06-.12-1.596-.128C18.04.01 17.994 0 17.95 0H6.05c-.15.01-.3.017-.45.027-.747.05-1.487.14-2.19.417C2.075.972 1.09 1.93.55 3.29c-.244.61-.36 1.25-.435 1.9C.06 5.71.03 6.23.017 6.75 0 6.85 0 6.95 0 7.05v9.9c.01.16.017.32.027.48.05.75.14 1.5.42 2.2.53 1.34 1.46 2.32 2.79 2.9.61.27 1.25.4 1.91.47.52.06 1.05.08 1.57.08h10.5c.6-.01 1.2-.05 1.8-.15 1.03-.17 1.94-.6 2.7-1.34.87-.85 1.37-1.89 1.6-3.07.09-.46.13-.93.15-1.4.01-.16.02-.32.02-.48V7.05c0-.31-.01-.62-.03-.926zm-6.42 5.775v4.61c0 .34-.04.67-.18.98-.22.48-.58.79-1.07.95-.28.09-.57.15-.86.18-.75.08-1.41-.47-1.49-1.23-.07-.63.27-1.23.86-1.48.23-.1.48-.16.73-.21.27-.06.54-.11.8-.19.24-.08.4-.25.45-.51.01-.06.02-.12.02-.18V9.28c0-.09-.02-.18-.05-.26-.05-.13-.15-.19-.29-.18-.14.01-.28.04-.42.07l-4.09.83c-.12.03-.24.06-.35.11-.2.09-.3.25-.32.47-.01.06-.01.12-.01.18v6.71c0 .35-.03.69-.17 1.01-.21.49-.58.81-1.08.97-.28.1-.58.16-.88.18-.76.07-1.41-.49-1.48-1.25-.06-.62.28-1.22.87-1.46.23-.1.47-.16.72-.21.26-.06.53-.1.79-.18.26-.08.42-.26.46-.54.01-.06.01-.13.01-.19V6.92c0-.12.01-.24.04-.35.06-.24.22-.39.45-.46.19-.06.39-.1.59-.14l4.44-.9c.28-.06.55-.11.83-.16.2-.03.4-.03.58.08.17.11.24.28.26.47.01.07.01.15.01.22v6.22z"/></svg></a>
@@ -262,7 +402,7 @@ gtag('config', 'G-PVHN0BBXC4');
 </div>
 
 <header class="hero">
-  <img class="hero-photo" src="bg-s333xgod-2.jpg" style="object-position:center 40%;filter:brightness(.9) contrast(1.05) saturate(1.05);" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async">
+  <img class="hero-photo" src="bg-s333xgod-2.jpg" style="object-position:center 40%;filter:brightness(.9) contrast(1.05) saturate(1.05);" alt="" aria-hidden="true" loading="lazy" fetchpriority="low" decoding="async">
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
@@ -791,26 +931,145 @@ gtag('config', 'G-PVHN0BBXC4');
   <button class="on-x" aria-label="Dismiss">&times;</button>
 </div>
 </div>
+<!-- MERCH WORLD (start) -->
+<div class="world" data-artist="merch" role="tabpanel" id="panel-merch" aria-label="Merch" tabindex="-1">
+<header class="hero hero-merch">
+  <img class="hero-photo" src="merch/hero.jpg" alt="" aria-hidden="true" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-out">Official merch &mdash; <b>Slime Music</b></p>
+    <h1>SLIME FLAG</h1>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#merch-shop">Preorder now</a>
+      <a class="btn btn-ghost" href="https://youtu.be/B9F0P4dBLR0" target="_blank" rel="noopener">Watch Aleta &#8599;&#xFE0E;</a>
+    </div>
+  </div>
+</header>
+
+<section id="merch-shop" style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-head"><h2>Preorder</h2><span class="eyebrow">Limited run</span></div>
+    <div class="product">
+      <div class="product-media">
+        <div class="product-stage flagset" id="pm-stage" data-mode="cut" data-qty="1">
+          <img class="stage-glow" id="pm-glow" src="merch/flag-black-cut.webp" alt="" aria-hidden="true" loading="lazy">
+          <img class="fs-b" src="merch/flag-green-cut.webp" alt="" loading="lazy">
+          <img class="fs-a" src="merch/flag-black-cut.webp" alt="Slime Flag, Black / Green" width="966" height="507" loading="lazy">
+          <img class="stage-photo" id="pm-photo" src="merch/flag-up.jpg" alt="" loading="lazy">
+          <span class="stage-cap" id="pm-cap" hidden></span>
+        </div>
+        <div class="product-thumbs">
+          <button type="button" class="pthumb flagset" data-order data-qty="1" aria-label="Show your order" aria-current="true"><img class="fs-b" src="merch/flag-green-cut.webp" alt="" loading="lazy"><img class="fs-a" src="merch/flag-black-cut.webp" alt="" loading="lazy"></button>
+          <button type="button" class="pthumb" data-src="merch/flag-up.jpg" data-alt="The Slime Flag held up and fully open, showing the skull and dollar-sign corner" data-cap="Shown in Black / Green" aria-label="Show photo: the flag held open" aria-current="false"><img src="merch/flag-up.jpg" alt="" loading="lazy"></button>
+          <button type="button" class="pthumb" data-src="merch/flag-back.jpg" data-alt="The Slime Flag draped across Mazze&rsquo;s back on a balcony above the city at night" data-cap="Shown in Black / Green" aria-label="Show photo: the flag worn across the back" aria-current="false"><img src="merch/flag-back.jpg" alt="" loading="lazy"></button>
+          <button type="button" class="pthumb" data-src="merch/flag-open.jpg" data-alt="The Slime Flag stretched wide, its stripes filling the frame" data-cap="Shown in Black / Green" aria-label="Show photo: the stripes up close" aria-current="false"><img src="merch/flag-open.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="product-info">
+        <p class="eyebrow product-tag">Slime Music &middot; Official merch</p>
+        <h3 class="product-name">Slime Flag</h3>
+        <p class="product-price"><span data-total="1">$20</span><small>2 for <span data-total="2">$30</span></small></p>
+        <p class="product-ship">+ <span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></p>
+        <p class="product-desc">The official flag of Slime Music, the album &mdash; as seen in the Aleta video. Bold stripes, a field of skulls and dollar signs where the stars would be, with a silky finish.</p>
+        <div class="opt">
+          <p class="opt-label opt-split"><span>How many</span><em>Mix or match any 2</em></p>
+          <div class="qty" role="group" aria-label="How many flags">
+            <button type="button" class="qty-btn" data-qty="1" aria-pressed="true"><b>1 flag</b><span data-total="1">$20</span></button>
+            <button type="button" class="qty-btn" data-qty="2" aria-pressed="false"><b>2 flags</b><span><span data-total="2">$30</span><span data-save-wrap> &middot; save <span data-save>$10</span></span></span></button>
+          </div>
+        </div>
+        <div class="opt" id="pick-1">
+          <p class="opt-label"><span id="pick-1-label">Colorway</span><b id="pick-1-name">Black / Green</b></p>
+          <div class="swatches" role="group" aria-label="Colorway for flag 1">
+            <button type="button" class="swatch" data-slot="1" data-color="black" aria-pressed="true"><i aria-hidden="true" style="--a:#1b1d1a;--b:#89ca46"></i>Black</button>
+            <button type="button" class="swatch" data-slot="1" data-color="green" aria-pressed="false"><i aria-hidden="true" style="--a:#dcd0bd;--b:#53a331"></i>White</button>
+          </div>
+        </div>
+        <div class="opt" id="pick-2" hidden>
+          <p class="opt-label"><span>Flag 2</span><b id="pick-2-name">White / Green</b></p>
+          <div class="swatches" role="group" aria-label="Colorway for flag 2">
+            <button type="button" class="swatch" data-slot="2" data-color="black" aria-pressed="false"><i aria-hidden="true" style="--a:#1b1d1a;--b:#89ca46"></i>Black</button>
+            <button type="button" class="swatch" data-slot="2" data-color="green" aria-pressed="true"><i aria-hidden="true" style="--a:#dcd0bd;--b:#53a331"></i>White</button>
+          </div>
+        </div>
+        <div class="opt" id="pick-ship">
+          <p class="opt-label"><label for="pm-country">Ship to</label><b id="pm-ship-amt">$10 shipping</b></p>
+          <div class="shipto"><select id="pm-country" autocomplete="country-name"><option>United States</option></select></div>
+        </div>
+        <a class="btn btn-solid product-buy" id="pm-buy" href="#" rel="noopener">Preorder &mdash; $20</a>
+        <p class="product-sum" aria-live="polite"><span id="pm-sum">1 &times; Black / Green</span><span class="sum-total"><span id="pm-parts">$20 + $10 shipping</span> = <b id="pm-total">$30</b></span></p>
+        <p class="product-policy"><b><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></b> &middot; Secure checkout via Stripe &middot; All sales final &middot; Questions? <a href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a></p>
+      </div>
+      <ul class="product-meta">
+        <li>Standard size &mdash; 3 &times; 5 ft</li>
+        <li>Limited run &mdash; preorder only</li>
+        <li><span data-flat>$10</span> flat shipping on all orders &mdash; worldwide, wherever we can deliver. A few countries cost more: choose yours under Ship to</li>
+        <li>Outside the US, import duties or taxes may apply &mdash; paid by the buyer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Seen in Aleta</h2><span class="eyebrow">Official video</span></div>
+    <div class="seen">
+      <a href="https://youtu.be/B9F0P4dBLR0" target="_blank" rel="noopener" aria-label="Watch Aleta on YouTube">
+        <img src="merch/aleta-1.jpg" alt="Mazze holding the Slime Flag on a balcony above the city at night" width="1280" height="720" loading="lazy">
+        <svg class="play" viewBox="0 0 68 48" aria-hidden="true"><path class="play-bg" d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.4.5 34 .5 34 .5S12.6.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 12.9.2 24 .2 24s0 11.1 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.6 47.5 34 47.5 34 47.5s21.4 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35.1 67.8 24 67.8 24s0-11.1-1.3-16.3z"/><path d="M27 34V14l18 10-18 10z" fill="#fff"/></svg>
+      </a>
+      <div><img src="merch/aleta-2.jpg" alt="Mazze swinging the Slime Flag in a bedroom above the city" width="960" height="540" loading="lazy"></div>
+      <div><img src="merch/aleta-3.jpg" alt="Mazze on the balcony with the Slime Flag wrapped around the neck" width="960" height="540" loading="lazy"></div>
+    </div>
+    <div class="seen-row">
+      <div><img src="merch/aleta-4.jpg" alt="Mazze spreading the Slime Flag like a cape in front of a mirror" width="960" height="540" loading="lazy"></div>
+      <div><img src="merch/aleta-5.jpg" alt="Mazze lying back in a spotlight with the Slime Flag across the lap" width="960" height="540" loading="lazy"></div>
+      <div><img src="merch/aleta-6.jpg" alt="The Slime Flag across Mazze&rsquo;s shoulders, seen from behind at a mirror" width="960" height="540" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="merch-band">
+  <img src="merch/flag-open.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--silver);margin:0">Slime Flag &middot; Slime Music</p>
+    <h2 class="band-title">1 for <span data-total="1">$20</span>. 2 for <span data-total="2">$30</span>.</h2>
+    <p class="band-sub">Mix or match the colorways<i aria-hidden="true"> &middot; </i><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></p>
+    <a class="btn btn-solid" href="#merch-shop">Preorder now</a>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <img src="emblem.png" alt="" loading="lazy">
+    <div>&copy; 2026 S333XGOD &amp; MAZZE. All rights reserved.</div>
+  </div>
+</footer>
+</div>
+<!-- MERCH WORLD (end) -->
 </main>
 
 <script>
   (function(){
     var hash=location.hash.slice(1);
-    var DEFAULT=/mazze/.test(hash)?'mazze':/s333xgod/.test(hash)?'s333xgod':"mazze";
+    /* The plain site address opens on MERCH. An artist page opens only when the address names it (#mazze, #s333xgod, #links-mazze ...). */
+    var DEFAULT=/mazze/.test(hash)?'mazze':/s333xgod/.test(hash)?'s333xgod':'merch';
+    var SITE=document.title;   /* the artist name this copy of the site carries in its <title> */
     var worlds=document.querySelectorAll('.world');
     var tabs=Array.prototype.slice.call(document.querySelectorAll('.sw'));
     var listen=document.getElementById('listen-link');
     function themeColor(key){
       var m=document.querySelector('meta[name="theme-color"]');
       if(!m){m=document.createElement('meta');m.name='theme-color';if(document.head)document.head.appendChild(m);}
-      m.setAttribute('content',key==='mazze'?'#070806':'#060708');
+      m.setAttribute('content',key==='mazze'?'#070806':key==='merch'?'#070708':'#060708');
     }
     function setArtist(key){
       document.body.dataset.artist=key;
       worlds.forEach(function(w){w.hidden=w.dataset.artist!==key;});
       tabs.forEach(function(t){var on=t.dataset.artist===key;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;});
-      listen.setAttribute('href','#links-'+key);
-      document.title=key==='mazze'?'MAZZE':'S333XGOD';
+      listen.textContent=key==='merch'?'Preorder':'Listen';listen.setAttribute('href',key==='merch'?'#merch-shop':'#links-'+key);
+      document.title=key==='merch'?SITE+' — SLIME FLAG':key==='mazze'?'MAZZE':'S333XGOD';
       themeColor(key);
     }
     function go(key,focus){
@@ -818,7 +1077,7 @@ gtag('config', 'G-PVHN0BBXC4');
       setArtist(key);
       window.scrollTo(0,0);
       if(focus){var t=document.getElementById('tab-'+key);if(t)t.focus();}
-      try{history.replaceState(null,'',location.pathname+(key==='mazze'?'#mazze':''));}catch(e){}
+      try{history.replaceState(null,'',location.pathname+(key==='merch'?'':'#'+key));}catch(e){}
     }
     tabs.forEach(function(t){
       t.addEventListener('click',function(){go(t.dataset.artist,false);});
@@ -829,6 +1088,10 @@ gtag('config', 'G-PVHN0BBXC4');
     });
     setArtist(DEFAULT);
     if(hash){var el=document.getElementById(hash);if(el)requestAnimationFrame(function(){el.scrollIntoView();});}
+    /* once the page has settled, fetch the other tabs' hero photos so switching tabs never shows a blank frame */
+    window.addEventListener('load',function(){setTimeout(function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.world[hidden] .hero-photo'),function(im){new Image().src=im.getAttribute('src');});
+    },1500);});
     var SIGNUP_ENDPOINT="https://nxvxfpuwlkfwyvmuqjge.supabase.co/functions/v1/subscribe";
     document.querySelectorAll('.signup').forEach(function(f){
       f.addEventListener('submit',function(e){
@@ -857,6 +1120,147 @@ gtag('config', 'G-PVHN0BBXC4');
         try{sessionStorage.setItem('outnow-closed','1');}catch(e){}});
     });
   })();
+  /* ==== MERCH JS (start) ==== order builder (1 or 2 flags, mix or match) + photo gallery */
+  (function(){
+    var stage=document.getElementById('pm-stage');
+    if(!stage)return;
+    var COLORS={
+      black:{label:'Black / Green',src:'merch/flag-black-cut.webp'},
+      green:{label:'White / Green',src:'merch/flag-green-cut.webp'}   /* shown to buyers as "White"; the key stays 'green' */
+    };
+    /* Price for 1 flag and for 2. Every price shown on the page is filled in from here. */
+    var TOTAL={1:20,2:30};
+    /* Flat shipping charge that checkout adds to an order. It must match the shipping rate on the Stripe links below. */
+    var SHIP=10;
+    /* One Stripe Payment Link per possible order. Paste each link in before launch; the button stays inactive while its link is '#'. */
+    var LINKS={
+      'black':'https://buy.stripe.com/6oU6oH3k850kaW28CiaZi00',          /* 1 x Black / Green  - $20 */
+      'green':'https://buy.stripe.com/fZu00jdYMgJ2aW23hYaZi01',          /* 1 x White / Green  - $20 */
+      'black+black':'https://buy.stripe.com/9B614ndYMeAUaW219QaZi02',    /* 2 x Black / Green  - $30 */
+      'green+green':'https://buy.stripe.com/eVqbJ18EscsM6FMbOuaZi03',    /* 2 x White / Green  - $30 */
+      'black+green':'https://buy.stripe.com/dRm00jcUIeAU7JQaKqaZi04'     /* 1 of each          - $30 */
+    };
+    /* A few countries cost more than $25 to reach, so their buyers pay the real shipping instead of the flat charge. Each group of them is a zone:
+       `ship` is what checkout adds for 1 flag and for 2, and `links` holds that zone's own Stripe links, which accept only its countries.
+       An order with no link listed here uses the main LINKS above (allowed only where the zone's charge equals the flat one).
+       Every amount must match the shipping rate on the Stripe links it points to; the button stays inactive while a link is '#'. */
+    var ZONES={
+      sa:{ship:{1:10,2:37},links:{                                         /* Saudi Arabia: 2 flags pay $37 shipping */
+        'black+black':'https://buy.stripe.com/14AfZh7AogJ22pwg4KaZi0g',
+        'green+green':'https://buy.stripe.com/4gM3cv6wkgJ28NU05MaZi0f',
+        'black+green':'https://buy.stripe.com/fZu28r4occsMaW2cSyaZi0h'}},
+      ae:{ship:{1:10,2:31},links:{                                         /* United Arab Emirates, Russia: 2 flags pay $31 shipping */
+        'black+black':'https://buy.stripe.com/28E9AT3k89gA7JQ3hYaZi0j',
+        'green+green':'https://buy.stripe.com/eVq14n4ocgJ2e8e05MaZi0i',
+        'black+green':'https://buy.stripe.com/28E14n6wkdwQ0hobOuaZi0k'}},
+      ht:{ship:{1:41,2:41},links:{                                         /* Haiti: every order pays $41 shipping */
+        'black':'https://buy.stripe.com/fZu14n3k8dwQ6FM8CiaZi05',
+        'green':'https://buy.stripe.com/7sYfZh6wkcsMfcig4KaZi06',
+        'black+black':'https://buy.stripe.com/eVqdR92g42Sc5BIcSyaZi07',
+        'green+green':'https://buy.stripe.com/5kQ4gz1c09gA4xE2dUaZi08',
+        'black+green':'https://buy.stripe.com/14A5kD07WeAU2pw19QaZi09'}},
+      af:{ship:{1:60,2:60},links:{                                         /* Afghanistan, Seychelles: every order pays $60 shipping */
+        'black':'https://buy.stripe.com/3cIaEX07WeAUd4a4m2aZi0a',
+        'green':'https://buy.stripe.com/28E6oH1c08cwaW22dUaZi0b',
+        'black+black':'https://buy.stripe.com/fZu6oH8Es0K41lsaKqaZi0d',
+        'green+green':'https://buy.stripe.com/9B600j1c050ke8e4m2aZi0c',
+        'black+green':'https://buy.stripe.com/5kQ7sL7Ao3Wgc0605MaZi0e'}}
+    };
+    var ZONE_OF={'Saudi Arabia':'sa','United Arab Emirates':'ae','Russia':'ae','Haiti':'ht','Afghanistan':'af','Seychelles':'af'};
+    /* The "Ship to" menu. Keep it in step with the countries switched on in the Stripe links: a country missing there cannot check out. */
+    var COUNTRIES='United States|Afghanistan|Åland Islands|Albania|Algeria|Andorra|Angola|Anguilla|Antigua & Barbuda|Argentina|Armenia|Aruba|Australia|Austria|Azerbaijan|Bahamas|Bahrain|Bangladesh|Barbados|Belarus|Belgium|Belize|Benin|Bermuda|Bolivia|Bosnia & Herzegovina|Botswana|Bouvet Island|Brazil|British Indian Ocean Territory|British Virgin Islands|Brunei|Bulgaria|Burkina Faso|Burundi|Cambodia|Cameroon|Canada|Cape Verde|Caribbean Netherlands|Cayman Islands|Central African Republic|Chad|Chile|China|Colombia|Comoros|Congo - Brazzaville|Congo - Kinshasa|Cook Islands|Costa Rica|Côte d’Ivoire|Croatia|Curaçao|Cyprus|Czech Republic|Denmark|Djibouti|Dominica|Dominican Republic|Ecuador|Egypt|El Salvador|Equatorial Guinea|Eritrea|Estonia|Eswatini|Ethiopia|Falkland Islands|Faroe Islands|Fiji|Finland|France|French Guiana|French Polynesia|French Southern Territories|Gabon|Gambia|Georgia|Germany|Ghana|Gibraltar|Greece|Greenland|Grenada|Guadeloupe|Guam|Guatemala|Guernsey|Guinea|Guinea-Bissau|Guyana|Haiti|Honduras|Hong Kong SAR China|Hungary|Iceland|India|Indonesia|Iraq|Ireland|Isle of Man|Israel|Italy|Jamaica|Japan|Jersey|Jordan|Kazakhstan|Kenya|Kosovo|Kuwait|Kyrgyzstan|Laos|Latvia|Lebanon|Lesotho|Liberia|Libya|Liechtenstein|Lithuania|Luxembourg|Macao SAR China|Madagascar|Malawi|Malaysia|Maldives|Mali|Malta|Martinique|Mauritania|Mauritius|Mayotte|Mexico|Moldova|Monaco|Mongolia|Montenegro|Montserrat|Morocco|Mozambique|Myanmar (Burma)|Namibia|Nauru|Nepal|Netherlands|New Caledonia|New Zealand|Nicaragua|Niger|Nigeria|Niue|North Macedonia|Norway|Oman|Pakistan|Panama|Papua New Guinea|Paraguay|Peru|Philippines|Pitcairn Islands|Poland|Portugal|Puerto Rico|Qatar|Réunion|Romania|Russia|Rwanda|Samoa|San Marino|São Tomé & Príncipe|Saudi Arabia|Senegal|Serbia|Seychelles|Sierra Leone|Singapore|Sint Maarten|Slovakia|Slovenia|Solomon Islands|South Africa|South Georgia & South Sandwich Islands|South Korea|Spain|Sri Lanka|St. Barthélemy|St. Helena|St. Kitts & Nevis|St. Lucia|St. Martin|St. Pierre & Miquelon|St. Vincent & Grenadines|Suriname|Svalbard & Jan Mayen|Sweden|Switzerland|Taiwan|Tajikistan|Tanzania|Thailand|Timor-Leste|Togo|Tokelau|Tonga|Trinidad & Tobago|Tristan da Cunha|Tunisia|Türkiye|Turks & Caicos Islands|Tuvalu|Uganda|Ukraine|United Arab Emirates|United Kingdom|Uruguay|Uzbekistan|Vanuatu|Vatican City|Venezuela|Vietnam|Wallis & Futuna|Zambia|Zimbabwe';
+    /* Clock settings that mean the visitor is in a higher-cost country: the menu starts on that country so the right shipping shows without a tap. */
+    var TZ_HOME={'Asia/Riyadh':'Saudi Arabia','Asia/Dubai':'United Arab Emirates','America/Port-au-Prince':'Haiti','Asia/Kabul':'Afghanistan','Indian/Mahe':'Seychelles'};
+    var TZ_RUSSIA='|Europe/Moscow|Europe/Kaliningrad|Europe/Samara|Europe/Volgograd|Europe/Saratov|Europe/Ulyanovsk|Europe/Astrakhan|Europe/Kirov|Asia/Yekaterinburg|Asia/Omsk|Asia/Novosibirsk|Asia/Barnaul|Asia/Tomsk|Asia/Novokuznetsk|Asia/Krasnoyarsk|Asia/Irkutsk|Asia/Chita|Asia/Yakutsk|Asia/Khandyga|Asia/Vladivostok|Asia/Ust-Nera|Asia/Magadan|Asia/Sakhalin|Asia/Srednekolymsk|Asia/Kamchatka|Asia/Anadyr|';
+    var qty=1, picks=[/white|green/.test(location.hash)?'green':'black',null];
+    function $(id){return document.getElementById(id);}
+    function all(sel){return Array.prototype.slice.call(document.querySelectorAll(sel));}
+    function other(c){return c==='black'?'green':'black';}
+    var sets=all('.flagset'), glow=$('pm-glow'), photo=$('pm-photo'), cap=$('pm-cap'), buy=$('pm-buy'), country=$('pm-country');
+    var thumbs=all('.pthumb'), swatches=all('.swatch'), qbtns=all('.qty-btn');
+    function swap(img,src){
+      if((img._want||img.getAttribute('src'))===src)return;
+      img._want=src;img.style.opacity='0';
+      setTimeout(function(){img.src=img._want;img.style.opacity='';},170);
+    }
+    function render(){
+      var a=COLORS[picks[0]], b=COLORS[picks[1]||other(picks[0])];
+      sets.forEach(function(s){
+        s.dataset.qty=String(qty);
+        swap(s.querySelector('.fs-a'),a.src);
+        swap(s.querySelector('.fs-b'),b.src);
+      });
+      swap(glow,a.src);
+      stage.querySelector('.fs-a').alt='Slime Flag, '+a.label;
+      stage.querySelector('.fs-b').alt=qty===2?'Slime Flag, '+b.label:'';
+      qbtns.forEach(function(q){q.setAttribute('aria-pressed',String(Number(q.dataset.qty)===qty));});
+      swatches.forEach(function(s){s.setAttribute('aria-pressed',String(picks[Number(s.dataset.slot)-1]===s.dataset.color));});
+      $('pick-2').hidden=qty===1;
+      $('pick-1-label').textContent=qty===1?'Colorway':'Flag 1';
+      $('pick-1-name').textContent=a.label;
+      $('pick-2-name').textContent=b.label;
+      var key, sum;
+      if(qty===1){key=picks[0];sum='1 × '+a.label;}
+      else if(picks[0]===picks[1]){key=picks[0]+'+'+picks[1];sum='2 × '+a.label;}
+      else{key='black+green';sum='1 × '+COLORS.black.label+'  +  1 × '+COLORS.green.label;}
+      /* shipping follows the "Ship to" country: the flat charge, or the zone's own charge and links */
+      var zone=ZONES[ZONE_OF[country.value]], ship=zone?zone.ship[qty]:SHIP;
+      var href=(zone?zone.links[key]||(ship===SHIP&&LINKS[key]):LINKS[key])||'#';
+      var note=zone?'shipping to '+(country.value==='United Arab Emirates'?'the ':'')+country.value:'flat shipping on all orders';
+      $('pm-sum').textContent=sum;
+      $('pm-parts').textContent='$'+TOTAL[qty]+' + $'+ship+' shipping';
+      $('pm-total').textContent='$'+(TOTAL[qty]+ship);
+      $('pm-ship-amt').textContent='$'+ship+' shipping';
+      all('[data-ship]').forEach(function(el){el.textContent='$'+ship;});
+      all('[data-ship-note]').forEach(function(el){el.textContent=note;});
+      buy.textContent='Preorder — $'+TOTAL[qty];
+      buy.setAttribute('href',href);
+      buy.setAttribute('aria-disabled',String(href==='#'));
+    }
+    function showOrder(){
+      stage.dataset.mode='cut';cap.hidden=true;
+      thumbs.forEach(function(t){t.setAttribute('aria-current',String(t.hasAttribute('data-order')));});
+    }
+    function showPhoto(t){
+      thumbs.forEach(function(x){x.setAttribute('aria-current',String(x===t));});
+      var im=new Image();
+      im.onload=im.onerror=function(){
+        if(t.getAttribute('aria-current')!=='true')return;
+        photo.src=t.dataset.src;photo.alt=t.dataset.alt||'';
+        cap.textContent=t.dataset.cap||'';cap.hidden=!t.dataset.cap;
+        stage.dataset.mode='photo';
+      };
+      im.src=t.dataset.src;
+    }
+    qbtns.forEach(function(q){q.addEventListener('click',function(){
+      qty=Number(q.dataset.qty);
+      if(qty===2&&!picks[1])picks[1]=other(picks[0]);   /* first time: start with one of each */
+      render();showOrder();
+    });});
+    swatches.forEach(function(s){s.addEventListener('click',function(){
+      picks[Number(s.dataset.slot)-1]=s.dataset.color;
+      render();showOrder();
+    });});
+    thumbs.forEach(function(t){t.addEventListener('click',function(){
+      if(t.hasAttribute('data-order'))showOrder();else showPhoto(t);
+    });});
+    buy.addEventListener('click',function(e){if(buy.getAttribute('href')==='#')e.preventDefault();});
+    all('[data-total]').forEach(function(el){el.textContent='$'+TOTAL[el.dataset.total];});
+    all('[data-flat]').forEach(function(el){el.textContent='$'+SHIP;});
+    country.textContent='';
+    COUNTRIES.split('|').forEach(function(name){var o=document.createElement('option');o.textContent=name;country.appendChild(o);});
+    try{
+      var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
+      var home=TZ_HOME[tz]||(TZ_RUSSIA.indexOf('|'+tz+'|')>-1?'Russia':'');
+      if(home)country.value=home;
+    }catch(e){}
+    country.addEventListener('change',function(){render();});
+    var save=2*TOTAL[1]-TOTAL[2];   /* what buying 2 saves over 2 singles; the "save" note hides itself if there is no saving */
+    all('[data-save]').forEach(function(el){el.textContent='$'+save;});
+    all('[data-save-wrap]').forEach(function(el){el.hidden=save<=0;});
+    render();
+  })();
+  /* ==== MERCH JS (end) ==== */
 </script>
-
+</body>
 </html>
