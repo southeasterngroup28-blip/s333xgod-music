@@ -325,12 +325,9 @@ gtag('config', 'G-PVHN0BBXC4');
   .shipto::after{content:"";position:absolute;right:19px;top:50%;width:8px;height:8px;margin-top:-7px;border-right:2px solid var(--silver);border-bottom:2px solid var(--silver);transform:rotate(45deg);pointer-events:none}
   .product-buy{margin-top:6px;align-self:stretch;justify-content:center;padding-block:17px;max-width:440px}
   .product-buy[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
-  .product-sum{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--silver);margin:-4px 0 0}
-  .sum-total{color:var(--muted)}
-  .sum-total b{color:var(--ink);font-weight:700}
-  .product-policy{font-size:12px;color:var(--muted);margin:0;letter-spacing:.01em}
-  .product-policy a{color:var(--silver);text-decoration:underline;text-underline-offset:2px}
-  .product-policy b{color:var(--ink);font-weight:700}
+  /* shop small print (sales policy, contact) sits in the footer of this tab, away from the order builder */
+  .foot-fine{margin:6px 0 0;font-size:12px;line-height:1.5;letter-spacing:.01em}
+  .foot-fine a{color:var(--silver);text-decoration:underline;text-underline-offset:2px}
   .product-meta{list-style:none;padding:16px 0 0;margin:0;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--hairline)}
   .product-meta li{font-size:13px;color:var(--muted);letter-spacing:.02em;padding-left:18px;position:relative}
   .product-meta li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
@@ -996,8 +993,6 @@ gtag('config', 'G-PVHN0BBXC4');
           <div class="shipto"><select id="pm-country" autocomplete="country-name"><option>United States</option></select></div>
         </div>
         <a class="btn btn-solid product-buy" id="pm-buy" href="#" rel="noopener">Preorder &mdash; $20</a>
-        <p class="product-sum" aria-live="polite"><span id="pm-sum">1 &times; Black / Green</span><span class="sum-total"><span id="pm-parts">$20 + $10 shipping</span> = <b id="pm-total">$30</b></span></p>
-        <p class="product-policy"><b><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></b> &middot; Secure checkout via Stripe &middot; All sales final &middot; Import duties outside the US are paid by the buyer &middot; Questions? <a href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a></p>
       </div>
       <ul class="product-meta">
         <li>Standard size &mdash; 3 &times; 5 ft</li>
@@ -1039,7 +1034,9 @@ gtag('config', 'G-PVHN0BBXC4');
 <footer class="site-foot">
   <div class="wrap">
     <img src="emblem.png" alt="" loading="lazy">
-    <div>&copy; 2026 S333XGOD &amp; MAZZE. All rights reserved.</div>
+    <div>&copy; 2026 S333XGOD &amp; MAZZE. All rights reserved.
+      <p class="foot-fine">All sales final &middot; Import duties outside the US are paid by the buyer &middot; Questions? <a href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a></p>
+    </div>
   </div>
 </footer>
 </div>
@@ -1203,13 +1200,12 @@ gtag('config', 'G-PVHN0BBXC4');
       var zone=ZONES[ZONE_OF[country.value]], ship=zone?zone.ship[qty]:SHIP;
       var href=(zone?zone.links[key]||(ship===SHIP&&LINKS[key]):LINKS[key])||'#';
       var note=zone?'shipping to '+(country.value==='United Arab Emirates'?'the ':'')+country.value:'flat shipping on all orders';
-      $('pm-sum').textContent=sum;
-      $('pm-parts').textContent='$'+TOTAL[qty]+' + $'+ship+' shipping';
-      $('pm-total').textContent='$'+(TOTAL[qty]+ship);
       $('pm-ship-amt').textContent='$'+ship+' shipping';
       all('[data-ship]').forEach(function(el){el.textContent='$'+ship;});
       all('[data-ship-note]').forEach(function(el){el.textContent=note;});
       buy.textContent='Preorder — $'+TOTAL[qty];
+      /* the full order is not printed on the page, so screen readers get it from the button's name */
+      buy.setAttribute('aria-label','Preorder — $'+TOTAL[qty]+': '+sum.replace(/\s+/g,' ')+', plus $'+ship+' shipping');
       buy.setAttribute('href',href);
       buy.setAttribute('aria-disabled',String(href==='#'));
     }
