@@ -16,14 +16,18 @@ gtag('config', 'G-PVHN0BBXC4');
 <link rel="icon" type="image/png" href="emblem-s333xgod.png">
 <link rel="canonical" href="https://slimemusic.online/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MAZZE">
-<meta property="og:description" content="Mazze × S333XGOD — official site. Stream every release on Spotify, Apple Music, SoundCloud and YouTube.">
+<meta property="og:title" content="SLIME FLAG — Official Merch">
+<meta property="og:description" content="The official flag of Slime Music, as seen in the Aleta video. Limited run — preorder now.">
 <meta property="og:url" content="https://slimemusic.online/">
-<meta property="og:image" content="https://slimemusic.online/art/slime-time.jpg">
+<meta property="og:image" content="https://slimemusic.online/merch/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070708">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"S333XGOD","url":"https://slimemusic.online/","sameAs":["https://open.spotify.com/artist/0UmGVyz073EWOteSaIFpXl","https://music.apple.com/us/artist/s333xgod/1694914218","https://soundcloud.com/s333xgod","https://www.youtube.com/channel/UCTZlvjEmjxjprBtlcSNA5uw","https://www.instagram.com/s333xgod","https://x.com/s333xgod","https://discord.gg/ycGJku7R2V","https://genius.com/artists/S333xgod"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"MAZZE","url":"https://slimemusic.online/#mazze","sameAs":["https://open.spotify.com/artist/6vG2RlxFprLvJoLd4IzRJh","https://music.apple.com/us/artist/mazze/1378716604","https://soundcloud.com/mmazzeo","https://www.youtube.com/@elmazze","https://www.instagram.com/elmazze","https://x.com/s333xgod","https://discord.gg/ycGJku7R2V","https://genius.com/artists/Mazze-usa"]}</script>
+<!-- link preview (the card chat apps and social sites show for the site address): the flag, 1200 x 630 -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Slime Flag in both colorways: Black / Green and White / Green">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="merch/hero.jpg" fetchpriority="high">
@@ -365,8 +369,6 @@ gtag('config', 'G-PVHN0BBXC4');
     background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 38%,transparent) 34%,color-mix(in srgb,var(--bg) 38%,transparent) 66%,var(--bg) 100%)}
   .band-title{font-family:var(--anton);font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:12px 0 14px;color:#fff;text-shadow:0 6px 50px rgba(0,0,0,.75)}
   .band-sub{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 28px;text-shadow:0 2px 14px rgba(0,0,0,.7)}
-  .band-sub i{font-style:normal}
-  @media(max-width:700px){.band-sub i{display:block;font-size:0;line-height:0}}
 
   /* nav: three tabs plus the Preorder pill have to fit a phone */
   @media(max-width:430px){.switch{gap:4px}.nav,.nav.scrolled{padding-inline:16px}.nav .pill{padding:8px 11px}}
@@ -989,7 +991,7 @@ gtag('config', 'G-PVHN0BBXC4');
           </div>
         </div>
         <div class="opt" id="pick-ship">
-          <p class="opt-label"><label for="pm-country">Ship to</label><b id="pm-ship-amt">$10 shipping</b></p>
+          <p class="opt-label"><label for="pm-country">Ship to</label></p>
           <div class="shipto"><select id="pm-country" autocomplete="country-name"><option>United States</option></select></div>
         </div>
         <a class="btn btn-solid product-buy" id="pm-buy" href="#" rel="noopener">Preorder &mdash; $20</a>
@@ -1026,7 +1028,7 @@ gtag('config', 'G-PVHN0BBXC4');
   <div class="wrap">
     <p class="eyebrow" style="color:var(--silver);margin:0">Slime Flag &middot; Slime Music</p>
     <h2 class="band-title">1 for <span data-total="1">$20</span>. 2 for <span data-total="2">$30</span>.</h2>
-    <p class="band-sub">Mix or match the colorways<i aria-hidden="true"> &middot; </i><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></p>
+    <p class="band-sub">Mix or match the colorways</p>
     <a class="btn btn-solid" href="#merch-shop">Preorder now</a>
   </div>
 </section>
@@ -1123,7 +1125,8 @@ gtag('config', 'G-PVHN0BBXC4');
     };
     /* Price for 1 flag and for 2. Every price shown on the page is filled in from here. */
     var TOTAL={1:20,2:30};
-    /* Flat shipping charge that checkout adds to an order. It must match the shipping rate on the Stripe links below. */
+    /* Flat shipping charge that checkout adds to an order. It must match the shipping rate on the Stripe links below.
+       The page itself never prints a shipping fee (the owner's choice): buyers see it on the Stripe checkout page. Here it only picks the right link. */
     var SHIP=10;
     /* One Stripe Payment Link per possible order. Paste each link in before launch; the button stays inactive while its link is '#'. */
     var LINKS={
@@ -1199,13 +1202,9 @@ gtag('config', 'G-PVHN0BBXC4');
       /* shipping follows the "Ship to" country: the flat charge, or the zone's own charge and links */
       var zone=ZONES[ZONE_OF[country.value]], ship=zone?zone.ship[qty]:SHIP;
       var href=(zone?zone.links[key]||(ship===SHIP&&LINKS[key]):LINKS[key])||'#';
-      var note=zone?'shipping to '+(country.value==='United Arab Emirates'?'the ':'')+country.value:'flat shipping on all orders';
-      $('pm-ship-amt').textContent='$'+ship+' shipping';
-      all('[data-ship]').forEach(function(el){el.textContent='$'+ship;});
-      all('[data-ship-note]').forEach(function(el){el.textContent=note;});
       buy.textContent='Preorder — $'+TOTAL[qty];
-      /* the full order is not printed on the page, so screen readers get it from the button's name */
-      buy.setAttribute('aria-label','Preorder — $'+TOTAL[qty]+': '+sum.replace(/\s+/g,' ')+', plus $'+ship+' shipping');
+      /* the order is not printed on the page, so screen readers get it from the button's name */
+      buy.setAttribute('aria-label','Preorder — $'+TOTAL[qty]+': '+sum.replace(/\s+/g,' '));
       buy.setAttribute('href',href);
       buy.setAttribute('aria-disabled',String(href==='#'));
     }
