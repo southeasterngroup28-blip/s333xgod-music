@@ -31,6 +31,7 @@ gtag('config', 'G-PVHN0BBXC4');
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="merch/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="merch/slime.webp" type="image/webp">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap">
 <style>
   /* s333xgod is the default palette on :root so themed vars resolve before JS runs (no white flash) */
@@ -369,6 +370,18 @@ gtag('config', 'G-PVHN0BBXC4');
     background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 38%,transparent) 34%,color-mix(in srgb,var(--bg) 38%,transparent) 66%,var(--bg) 100%)}
   .band-title{font-family:var(--anton);font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:12px 0 14px;color:#fff;text-shadow:0 6px 50px rgba(0,0,0,.75)}
   .band-sub{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 28px;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+
+  /* melting lettering: the word SLIME in the two titles is a picture of 3D melting letters (merch/slime.webp).
+     It is sized in em, so it scales with the type and sits on the same baseline as the word next to it.
+     The real word stays in the page underneath it (for screen readers, search and copy-paste);
+     if the picture cannot load, the word simply shows as green text. */
+  .slime{display:inline-block;width:2.443em;color:transparent;white-space:nowrap}
+  .melt{display:inline-block;position:relative;width:0;height:0;vertical-align:baseline;pointer-events:none;-webkit-user-select:none;user-select:none}
+  .melt img{position:absolute;display:block;left:-.1204em;top:-.9593em;width:2.6833em;height:1.7593em;max-width:none}
+  .slime.no-art{width:auto;color:var(--accent)}
+  .slime.no-art .melt{display:none}
+  .hero-merch h1{margin-bottom:.44em}
+  .product-name{margin-bottom:.46em}
 
   /* nav: three tabs plus the Preorder pill have to fit a phone */
   @media(max-width:430px){.switch{gap:4px}.nav,.nav.scrolled{padding-inline:16px}.nav .pill{padding:8px 11px}}
@@ -937,7 +950,7 @@ gtag('config', 'G-PVHN0BBXC4');
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="hero-out">Official merch &mdash; <b>Slime Music</b></p>
-    <h1>SLIME FLAG</h1>
+    <h1><span class="slime"><span class="melt" aria-hidden="true"><img src="merch/slime.webp" alt="" width="1449" height="950" decoding="async" onerror="this.closest('.slime').classList.add('no-art')"></span>SLIME</span> FLAG</h1>
     <div class="cta-row">
       <a class="btn btn-solid" href="#merch-shop">Preorder now</a>
       <a class="btn btn-ghost" href="https://youtu.be/B9F0P4dBLR0" target="_blank" rel="noopener">Watch Aleta &#8599;&#xFE0E;</a>
@@ -966,7 +979,7 @@ gtag('config', 'G-PVHN0BBXC4');
       </div>
       <div class="product-info">
         <p class="eyebrow product-tag">Slime Music &middot; Official merch</p>
-        <h3 class="product-name">Slime Flag</h3>
+        <h3 class="product-name"><span class="slime"><span class="melt" aria-hidden="true"><img src="merch/slime.webp" alt="" width="1449" height="950" decoding="async" onerror="this.closest('.slime').classList.add('no-art')"></span>Slime</span> Flag</h3>
         <p class="product-price"><span data-total="1">$20</span><small>2 for <span data-total="2">$30</span></small></p>
         <p class="product-desc">The official flag of Slime Music, the album &mdash; as seen in the Aleta video. Bold stripes, a field of skulls and dollar signs where the stars would be, with a silky finish.</p>
         <div class="opt">
