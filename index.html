@@ -293,7 +293,6 @@ gtag('config', 'G-PVHN0BBXC4');
   .product-name{font-family:var(--anton);font-weight:400;font-size:clamp(38px,5.2vw,62px);line-height:1.02;letter-spacing:.02em;text-transform:uppercase;margin:0;color:var(--ink)}
   .product-price{display:flex;align-items:baseline;gap:12px;font-family:var(--anton);font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.1;color:var(--ink);margin:0}
   .product-price small{font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  .product-ship{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--silver);margin:-6px 0 0;text-wrap:balance}
   .product-desc{color:var(--silver);font-size:16px;line-height:1.6;margin:0;max-width:46ch}
   .opt{display:flex;flex-direction:column;gap:10px;align-self:stretch}
   .opt[hidden]{display:none}
@@ -970,7 +969,6 @@ gtag('config', 'G-PVHN0BBXC4');
         <p class="eyebrow product-tag">Slime Music &middot; Official merch</p>
         <h3 class="product-name">Slime Flag</h3>
         <p class="product-price"><span data-total="1">$20</span><small>2 for <span data-total="2">$30</span></small></p>
-        <p class="product-ship">+ <span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></p>
         <p class="product-desc">The official flag of Slime Music, the album &mdash; as seen in the Aleta video. Bold stripes, a field of skulls and dollar signs where the stars would be, with a silky finish.</p>
         <div class="opt">
           <p class="opt-label opt-split"><span>How many</span><em>Mix or match any 2</em></p>
@@ -999,13 +997,11 @@ gtag('config', 'G-PVHN0BBXC4');
         </div>
         <a class="btn btn-solid product-buy" id="pm-buy" href="#" rel="noopener">Preorder &mdash; $20</a>
         <p class="product-sum" aria-live="polite"><span id="pm-sum">1 &times; Black / Green</span><span class="sum-total"><span id="pm-parts">$20 + $10 shipping</span> = <b id="pm-total">$30</b></span></p>
-        <p class="product-policy"><b><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></b> &middot; Secure checkout via Stripe &middot; All sales final &middot; Questions? <a href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a></p>
+        <p class="product-policy"><b><span data-ship>$10</span> <span data-ship-note>flat shipping on all orders</span></b> &middot; Secure checkout via Stripe &middot; All sales final &middot; Import duties outside the US are paid by the buyer &middot; Questions? <a href="mailto:ricardo@ronsollc.com">ricardo@ronsollc.com</a></p>
       </div>
       <ul class="product-meta">
         <li>Standard size &mdash; 3 &times; 5 ft</li>
         <li>Limited run &mdash; preorder only</li>
-        <li><span data-flat>$10</span> flat shipping on all orders &mdash; worldwide, wherever we can deliver. A few countries cost more: choose yours under Ship to</li>
-        <li>Outside the US, import duties or taxes may apply &mdash; paid by the buyer</li>
       </ul>
     </div>
   </div>
@@ -1246,7 +1242,6 @@ gtag('config', 'G-PVHN0BBXC4');
     });});
     buy.addEventListener('click',function(e){if(buy.getAttribute('href')==='#')e.preventDefault();});
     all('[data-total]').forEach(function(el){el.textContent='$'+TOTAL[el.dataset.total];});
-    all('[data-flat]').forEach(function(el){el.textContent='$'+SHIP;});
     country.textContent='';
     COUNTRIES.split('|').forEach(function(name){var o=document.createElement('option');o.textContent=name;country.appendChild(o);});
     try{
